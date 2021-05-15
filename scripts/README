@@ -1,3 +1,4 @@
 Les scripts sont écrits en POSIX compliant shell, pour les executer il faut utiliser dash au lieu de bash.
-pour changer de shell executer la commande suivante :
+vous pouvez installer dash avec sudo pacman -S dash.
+Pour changer de shell executer la commande suivante :
 sudo ln -sfT dash /usr/bin/sh
