@@ -1,0 +1,3 @@
+Les scripts sont écrits en POSIX compliant shell, pour les executer il faut utiliser dash au lieu de bash.
+pour changer de shell executer la commande suivante :
+sudo ln -sfT dash /usr/bin/sh
