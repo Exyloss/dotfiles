@@ -1,0 +1,24 @@
+let mapleader =" "
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'
+call plug#end()
+
+set number relativenumber
+syntax on
+filetype plugin indent on
+set wildmode=longest,list,full
+set splitbelow splitright
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+map <C-s> :w<CR>
+map <C-q> :q!<CR>
+map <C-b> iß 
+map <leader>f :Goyo \| set linebreak<CR>
+map <leader>s :!clear && spellcheck %<CR>
+map <leader>p :!clear && python %<CR>
+
+vnoremap <C-c> "*Y :let @+=@*<CR>
+map <C-v> "+P

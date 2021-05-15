@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pgrep -x dmenu && exit
+link=$(xclip -o | grep "https://www.youtube.com" |  dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Quelle vidéo souhaitez-vous visionner ?")
+[[ "$link" == "" ]] && exit 1
+mpv $link

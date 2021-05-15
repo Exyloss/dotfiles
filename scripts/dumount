@@ -1,0 +1,9 @@
+#!/bin/sh
+
+pgrep -x dmenu && exit
+
+unmountable=$(find /mnt /home/antonin/mnt -type d -maxdepth 3 2>/dev/null)
+[[ "$unmountable" = "" ]] && exit 1
+chosen=$(echo "$unmountable" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Démonter quel disque ?")
+[[ "$chosen" = "" ]] && exit 1
+sudo umount "$chosen" && exit 1

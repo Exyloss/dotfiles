@@ -1,0 +1,5 @@
+alias p="sudo pacman"
+alias rb="sudo reboot"
+alias off="sudo poweroff"
+alias ls="ls --color=auto"
+alias ytv="youtube-viewer"
