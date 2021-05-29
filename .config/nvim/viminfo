@@ -1,0 +1,351 @@
+# Ce fichier viminfo a été généré par Vim 8.2.
+# Vous pouvez l'éditer, mais soyez prudent.
+
+# Viminfo version
+|1,4
+
+# 'encoding' dans lequel ce fichier a été écrit
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Historique ligne de commande (chronologie décroissante) :
+:q
+|2,0,1619972777,,"q"
+:! pandoc test2.md -t beamer -o test2.pdf
+|2,0,1619901654,,"! pandoc test2.md -t beamer -o test2.pdf"
+:w
+|2,0,1619901627,,"w"
+:LLPStartPreview
+|2,0,1619901446,,"LLPStartPreview"
+:wq
+|2,0,1619901395,,"wq"
+:LLPStartPreview test.tex
+|2,0,1619900886,,"LLPStartPreview test.tex"
+:so ~/.vim/vimrc
+|2,0,1619900826,,"so ~/.vim/vimrc"
+:LPPStartPreview
+|2,0,1619900643,,"LPPStartPreview"
+:! pdflatex test.tex
+|2,0,1619899965,,"! pdflatex test.tex"
+:PlugInstall
+|2,0,1619900380,,"PlugInstall"
+:! pdf latex test.tex
+|2,0,1619898937,,"! pdf latex test.tex"
+:! pdf latex
+|2,0,1619898928,,"! pdf latex"
+:! pdflatex
+|2,0,1619898916,,"! pdflatex"
+
+# Historique chaîne de recherche (chronologie décroissante) :
+
+# Historique expression (chronologie décroissante) :
+
+# Historique ligne de saisie (chronologie décroissante) :
+
+# Historique Ligne de débogage (chronologie décroissante) :
+
+# Registres :
+""1	LINE	0
+	Revoila du texte !
+|3,1,1,1,1,0,1619901488,"Revoila du texte !"
+"2	CHAR	0
+	call vundle#begin()
+	" A Vim Plugin for Lively Previewing LaTeX PDF Output
+	Plugin 'xuhdev/vim-latex-live-preview'
+	call vundle#end()
+|3,0,2,0,4,0,1619900427,"call vundle#begin()","\" A Vim Plugin for Lively Previewing LaTeX PDF Output","Plugin 'xuhdev/vim-latex-live-preview'","call vundle#end()"
+"3	LINE	0
+	execute pathogen#infect()
+|3,0,3,1,1,0,1619898511,"execute pathogen#infect()"
+"4	LINE	0
+	[...]
+|3,0,4,1,1,0,1619898326,"[...]"
+"5	LINE	0
+	[...]
+|3,0,5,1,1,0,1619898325,"[...]"
+
+# Marques dans le fichier :
+'0  1  5  ~/dev/test2.md
+|4,48,1,5,1619901665,"~/dev/test2.md"
+'1  1  0  ~/dev/test.md
+|4,49,1,0,1619901520,"~/dev/test.md"
+'2  13  0  ~/dev/test.tex
+|4,50,13,0,1619901515,"~/dev/test.tex"
+'3  1  0  ~/dev/test.tex
+|4,51,1,0,1619901427,"~/dev/test.tex"
+'4  1  0  ~/dev/test.tex
+|4,52,1,0,1619901427,"~/dev/test.tex"
+'5  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,53,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+'6  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,54,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+'7  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,55,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+'8  1  0  ~/dev/test.tex
+|4,56,1,0,1619901312,"~/dev/test.tex"
+'9  1  0  ~/dev/test.tex
+|4,57,1,0,1619901312,"~/dev/test.tex"
+
+# Liste de sauts (le plus récent en premier) :
+-'  1  5  ~/dev/test2.md
+|4,39,1,5,1619901665,"~/dev/test2.md"
+-'  1  5  ~/dev/test2.md
+|4,39,1,5,1619901665,"~/dev/test2.md"
+-'  1  0  ~/dev/test.md
+|4,39,1,0,1619901520,"~/dev/test.md"
+-'  1  0  ~/dev/test.md
+|4,39,1,0,1619901520,"~/dev/test.md"
+-'  1  0  ~/dev/test.md
+|4,39,1,0,1619901520,"~/dev/test.md"
+-'  1  0  ~/dev/test.md
+|4,39,1,0,1619901520,"~/dev/test.md"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  13  0  ~/dev/test.tex
+|4,39,13,0,1619901515,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901460,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  1  0  ~/dev/test.tex
+|4,39,1,0,1619901427,"~/dev/test.tex"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  40  1  ~/dwm-config/dwm-6.2/config.h
+|4,39,40,1,1619901414,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901407,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  39  80  ~/dwm-config/dwm-6.2/config.h
+|4,39,39,80,1619901395,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901337,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901337,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901337,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901337,"~/dwm-config/dwm-6.2/config.h"
+-'  1  0  ~/dwm-config/dwm-6.2/config.h
+|4,39,1,0,1619901337,"~/dwm-config/dwm-6.2/config.h"
+
+# Historique des marques dans les fichiers (les plus récentes en premier) :
+
+> ~/dev/test2.md
+	*	1619901661	0
+	"	1	5
+	^	1	6
+	.	1	5
+	+	1	5
+
+> ~/dev/test.md
+	*	1619901518	0
+	"	1	0
+
+> ~/dev/test.tex
+	*	1619901494	0
+	"	13	0
+	.	13	0
+	+	1	23
+	+	7	16
+	+	15	12
+	+	11	16
+	+	4	21
+	+	5	32
+	+	8	0
+	+	9	9
+	+	12	14
+	+	2	19
+	+	13	23
+	+	13	0
+
+> ~/dwm-config/dwm-6.2/config.h
+	*	1619901410	0
+	"	40	1
+	^	39	81
+	.	39	80
+	+	39	80
+
+> ~/.vim/vimrc
+	*	1619901057	0
+	"	6	0
+	^	13	54
+	.	14	0
+	+	14	14
+	+	12	0
+	+	14	0
+	+	3	0
+	+	17	16
+	+	17	0
+	+	18	0
+	+	10	38
+	+	11	37
+	+	13	54
+	+	12	0
+	+	14	0
+
+> ~/.Xresources
+	*	1619896577	0
+	"	8	23
+	^	8	24
+	.	8	23
+	+	8	23
