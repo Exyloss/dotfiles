@@ -5,9 +5,9 @@
 export LANG=fr_FR.UTF-8
 export ZDOTDIR=$HOME/.config/zsh
 export READER="zathura"
-export EDITOR="vim"
+export EDITOR="nvim"
 export TRUEBROWSER="brave"
-export TERMINAL="st"
+export TERMINAL="urxvt"
 export LESSHISTFILE=-
 
 [ -f ~/.config/zsh/.zshrc ] && . ~/.config/zsh/.zshrc
