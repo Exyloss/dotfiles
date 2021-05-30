@@ -9,7 +9,7 @@ URxvt.internalBorder: 10
 URxvt*font: 		      xft:Menlo for Powerline:regular:size=10
 URxvt*boldFont:		    xft:Menlo for Powerline:bold:size=10
 URxvt*cursorBlink:    true
-URxvt.iso14755:		    false
+URxvt.iso14755:		    true
 URxvt*utf8:			      true
 URxvt.keysym.C-equal:      resize-font:bigger
 URxvt.keysym.C-parenright: resize-font:smaller
@@ -40,5 +40,3 @@ urxvt*background: rgba:0000/0000/0000/c800
 *.color15: #ebdbb2
 *.foreground: white
 *.cursorColor: white
-
-
