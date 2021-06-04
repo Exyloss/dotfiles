@@ -1,13 +1,12 @@
 !! Transparency (0-1):
-st.alpha: 0.92
+st.alpha: 0.8
+st.background: black
 
 !! Set a default font and font size as below:
 st.font: Monospace-11;
 URxvt*scrollBar:	    false
-URxvt*letterSpace:  	-3
 URxvt.internalBorder: 10
-URxvt*font: 		      xft:Menlo for Powerline:regular:size=10
-URxvt*boldFont:		    xft:Menlo for Powerline:bold:size=10
+URxvt*font: xft:monospace:size=11
 URxvt*cursorBlink:    true
 URxvt.iso14755:		    true
 URxvt*utf8:			      true
