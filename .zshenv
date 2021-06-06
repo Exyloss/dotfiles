@@ -3,6 +3,8 @@
 #
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export CARGO_HOME="$HOME/.local/cargo"
+export GOPATH="$HOME/.local/go"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export LANG=fr_FR.UTF-8
@@ -14,7 +16,6 @@ export TERMINAL="urxvt"
 export LESSHISTFILE=-
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
-export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\
