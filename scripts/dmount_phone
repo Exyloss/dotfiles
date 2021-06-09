@@ -3,10 +3,10 @@
 pgrep -x dmenu && exit
 
 mountable=$(simple-mtpfs -l | awk '{print $2}')
-[ "$mountable" = "" ] && exit 1
+[ "$mountable" = "" ] && notify-send -t 3000 "Aucun téléphone monté" && exit 1
 chosen=$(echo "$mountable" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Monter quel appareil ?")
 [ "$chosen" = "" ] && exit 1
 dir=$(find /mnt /home/antonin/mnt -type d -maxdepth 3 2>/dev/null)
 mountpoint=$(echo "$dir" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Écrivez votre point de montage.")
 [ "$mountpoint" = "" ] && exit 1
-simple-mtpfs "$mountpoint"
+simple-mtpfs 1 "$mountpoint" && notify-send -t 3000 "Téléphone monté en $chosen"

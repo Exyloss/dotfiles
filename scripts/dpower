@@ -2,7 +2,8 @@
 
 pgrep -x dmenu && exit
 
-chosen=$(printf "Redémarrer\nÉteindre" | dmenu -c -nb "#000000" -sb "#192E4C")
+chosen=$(printf "Redémarrer\nÉteindre\nVerrouiller" | dmenu -c -nb "#000000" -sb "#192E4C")
 [ "$chosen" = "" ] && exit 1
 [ "$chosen" = "Éteindre" ] && sudo poweroff
 [ "$chosen" = "Redémarrer" ] && sudo reboot
+[ "$chosen" = "Verrouiller" ] && slock
