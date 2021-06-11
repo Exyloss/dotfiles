@@ -1,5 +1,5 @@
 exec slstatus &
-exec xrdb .config/.Xresources &
+exec xrdb .config/x11/Xresources &
 exec setxkbmap fr &
 exec numlockx &
 exec xcompmgr &
