@@ -2,9 +2,10 @@
 # ~/.zshenv
 #
 
+export PATH="$HOME/.local/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
-export CARGO_HOME="$HOME/.local/cargo"
-export GOPATH="$HOME/.local/go"
+export CARGO_HOME="$HOME/.local/share/cargo"
+export GOPATH="$HOME/.local/share/go"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export LANG=fr_FR.UTF-8
