@@ -13,3 +13,5 @@ Dépendances :
  - simple-mtpfs (AUR)
  - mpv
  - youtube-viewer-git (AUR)
+ - lf (AUR)
+ - libxft-bgra (AUR)

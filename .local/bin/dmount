@@ -7,7 +7,7 @@ mountable=$(lsblk -lp | grep "part $" | awk '{print $1, "(", $4, ")"}')
 chosen=$(echo "$mountable" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Monter quel disque ?" | awk '{print $1}')
 [ "$chosen" = "" ] && exit 1
 sudo mount "$chosen" && exit 1
-dir=$(find /mnt /home/antonin/mnt -type d -maxdepth 3 2>/dev/null)
+dir=$(find /home/antonin/ -type d -maxdepth 3 2>/dev/null)
 mountpoint=$(echo "$dir" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Écrivez votre point de montage.")
 [ "$mountpoint" = "" ] && exit 1
 if [ ! -d "$mountpoint" ]; then

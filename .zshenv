@@ -2,7 +2,12 @@
 # ~/.zshenv
 #
 
+export EDITOR="nvim"
+export TERMINAL="st"
+export BROWSER="brave"
+
 export PATH="$HOME/.local/bin"
+export SUDO_ASKPASS="$HOME/.local/bin/dpass"
 export XDG_CONFIG_HOME="$HOME/.config"
 export CARGO_HOME="$HOME/.local/share/cargo"
 export GOPATH="$HOME/.local/share/go"
@@ -10,10 +15,6 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export LANG=fr_FR.UTF-8
 export ZDOTDIR=$HOME/.config/zsh
-export READER="zathura"
-export EDITOR="nvim"
-export TRUEBROWSER="brave"
-export TERMINAL="urxvt"
 export LESSHISTFILE=-
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
