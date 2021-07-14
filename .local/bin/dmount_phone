@@ -9,4 +9,4 @@ chosen=$(echo "$mountable" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Monter 
 dir=$(find /home/antonin/ -type d -maxdepth 3 2>/dev/null)
 mountpoint=$(echo "$dir" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Écrivez votre point de montage.")
 [ "$mountpoint" = "" ] && exit 1
-simple-mtpfs 1 "$mountpoint" && notify-send -t 3000 "Téléphone monté en $chosen"
+simple-mtpfs --device 1 "$mountpoint" && notify-send -t 3000 "Téléphone monté en $chosen"
