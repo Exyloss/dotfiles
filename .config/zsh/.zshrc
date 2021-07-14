@@ -1,6 +1,8 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
+
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#PS1="%{$fg[green]%}%~%{$reset_color%} >%b "
 
 # History in cache directory:
 HISTSIZE=10000
@@ -17,7 +19,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-
+bindkey -s '^k' 'clear\n'
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
