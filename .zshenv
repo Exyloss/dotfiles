@@ -2,7 +2,10 @@
 # ~/.zshenv
 #
 
-export PATH="$HOME/.local/bin"
+
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export LC_MESSAGES="fr"
+export LANG="fr"
 export SUDO_ASKPASS="$HOME/.local/bin/dpass"
 export XDG_CONFIG_HOME="$HOME/.config"
 export CARGO_HOME="$HOME/.local/share/cargo"
@@ -14,7 +17,7 @@ export ZDOTDIR=$HOME/.config/zsh
 export READER="zathura"
 export EDITOR="nvim"
 export TRUEBROWSER="brave"
-export TERMINAL="urxvt"
+export TERMINAL="st"
 export LESSHISTFILE=-
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
@@ -99,6 +102,4 @@ ex=🎯:\
 [ -f ~/.config/zsh/.zshrc ] && . ~/.config/zsh/.zshrc
 
 #start graphical server if dwm not already running
-if [ "$(tty)" = "/dev/tty1" ]; then
-	pgrep -x dwm || exec startx
-fi
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
