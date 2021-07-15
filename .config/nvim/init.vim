@@ -9,6 +9,7 @@ set nocompatible
 set number
 syntax on
 filetype plugin on
+set mouse=a
 set wildmode=longest,list,full
 set splitbelow splitright
 map <C-h> <C-w>h
@@ -23,10 +24,13 @@ map <leader>s :!clear && spellcheck %<CR>
 map <leader>p :!clear && python %<CR>
 map <leader>m :!clear && pandoc % -o %.pdf <CR><CR>
 map <leader>g :!clear && groff -Kutf8 -ms % -T pdf > %.pdf && zathura %.pdf <CR><CR>
+map <leader>t :w<CR>:!clear && pdflatex %<CR><CR>
 
-autocmd FileType html inoremap ;h <!DOCTYPE html><CR><html><CR><head><CR><style type="text/css" src=""></style><CR><meta charset="utf-8"><CR><title></title><CR></head><CR><body><CR><CR></body><CR></html><Esc>
+autocmd FileType html inoremap ;h <!DOCTYPE html><CR><html><CR><head><CR><link rel="stylesheet" href="style.css"><CR><meta charset="utf-8"><CR><title></title><CR></head><CR><body><CR><CR></body><CR></html><Esc>
 
 nnoremap <F5> :GundoToggle<CR>
+" Disables automatic commenting on newline:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Formats the statusline
 set statusline=[%f]     " file name
