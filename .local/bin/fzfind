@@ -1,0 +1,17 @@
+#!/bin/sh
+
+file=$(find ~ -type f | fzf)
+ext=$(echo "$file" | awk -F "/" '{print $NF}' | awk -F "." '{print $NF}')
+echo "$ext"
+case $ext in
+	"pdf"|"epub")  zathura "$file" ;;
+	"jpg"|"png"|"svg"|"gif") sxiv "$file" ;;
+	"mp4")  mpv "$file" ;;
+	"zip") 
+		unzip "$file";
+		dir=$(echo "$file" | sed "s/.zip//g");
+		cd "$dir" || exit;;
+	*)	nvim "$file";;
+
+esac
+		

@@ -1,0 +1,14 @@
+#!/bin/sh
+links=$( cat "$1" | tr -s " '\"<>[]()" "\n" | grep "://" | grep "http" | awk -F 'http' '{print $2}' | sed 's/^/http/' |  sed 's/\.$//g')
+[ "$links" = "" ] && exit 1
+choise=$(printf "%s" "$links" | dmenu -c)
+[ "$choise" = "" ] && exit 1
+ext=$(printf "%s" "$choise" | awk -F "." '{print $NF}')
+case "$ext" in 
+	"jpg" | "png" | "gif" | "svg") curl "$choise" --output ~/.cache/img."$ext"; sxiv ~/.cache/img."$ext" ;;
+	"mp3" | "mp4" | "flac" | "wav" | "m4a" | "webm") curl "$choise" --output ~/.cache/file."$ext"; mpv ~/.cache/file."$ext" ;;
+	"txt") curl "$choise" --output ~/.cache/file."$ext"; $EDITOR ~/.cache/file."$ext" ;;
+	"pdf") curl "$choise" --output ~/.cache/file.pdf; zathura ~/.cache/file.pdf ;;
+	*) brave "$choise" ;;
+esac
+	

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+BROWSER=$(echo "surf")
+engine=$(cat ~/.config/engine-list)
+choise=$(echo "$engine" | dmenu -c -p "Choisissez un moteur de recherche.")
+[ "$choise" = "" ] &&  exit 1
+search=$(dmenu -c -p "Saisissez votre recherche")
+search2=$(echo "$search" | sed "s/ /+/")
+choise2=$(echo "$choise" | awk '{print $3}')
+[ "$search" = "" ] && exit 1
+link=$(echo "$choise2$search2")
+echo "$link"
+"$BROWSER" "$link"

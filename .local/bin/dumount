@@ -2,8 +2,8 @@
 
 pgrep -x dmenu && exit
 
-unmountable=$(find /home/antonin/ -type d -maxdepth 3 2>/dev/null)
-[[ "$unmountable" = "" ]] && exit 1
-chosen=$(echo "$unmountable" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Démonter quel disque ?")
-[[ "$chosen" = "" ]] && exit 1
-sudo umount "$chosen" && notify-send -t 3000 "$chosen démonté" && exit 1
+devices=$(cat /etc/mtab | grep -e "/dev/sd\|simple-mtpfs" | awk '{print $2}' | grep "home")
+[ "$devices" = "" ] && exit 1
+chose=$(echo "$devices" | dmenu -c -p "Démonter quel appareil ?")
+[ "$chose" = "" ] && exit 1
+sudo umount "$chose" && notify-send "$chose démonté"

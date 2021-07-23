@@ -1,5 +1,3 @@
-# Luke's lf settings
-
 # Basic vars
 set shell bash
 set shellopts '-eu'
@@ -8,6 +6,9 @@ set scrolloff 10
 set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
+set info size:time
+set number
+set drawbox
 
 # cmds/functions
 cmd open ${{
@@ -37,7 +38,7 @@ cmd extract ${{
 }}
 
 cmd delete ${{
-	clear; tput cup (($(tput lines)/3)); tput bold
+	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
 	printf "%s\n\t" "$fx"
 	printf "delete?[y/N]"
@@ -45,27 +46,6 @@ cmd delete ${{
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
-cmd moveto ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	clear; echo "Move to where?"
-	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf | sed 's|~|$HOME|' )" &&
-	for x in $fx; do
-		eval mv -iv \"$x\" \"$dest\"
-	done &&
-	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
-}}
-
-cmd copyto ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	clear; echo "Copy to where?"
-	dest="$(cut -d'	' -f2- ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf | sed 's|~|$HOME|' )" &&
-	for x in $fx; do
-		eval cp -ivr \"$x\" \"$dest\"
-	done &&
-	notify-send "📋 File(s) copied." "File(s) copies to $dest."
-}}
 
 cmd setbg "$1"
 
@@ -78,21 +58,18 @@ map C copyto
 map M moveto
 map <c-n> push :mkdir<space>
 map <c-r> reload
-map <c-s> set hidden!
 map <enter> shell
 map x $$f
 map X !$f
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
-map A rename # at the very end
+map a rename # at the very end
 map c push A<c-u> # new rename
-map I push A<c-a> # at the very beginning
 map i push A<a-b><a-b><a-f> # before extention
-map a push A<a-b> # after extention
 map B bulkrename
 map b $setbg $f
 
-map <c-e> down
-map <c-y> up
 map V push :!nvim<space>
+map H :set hidden!
+map <enter> shell
