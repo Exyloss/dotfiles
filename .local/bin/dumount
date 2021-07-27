@@ -2,7 +2,7 @@
 
 pgrep -x dmenu && exit
 
-devices=$(cat /etc/mtab | grep -e "/dev/sd\|simple-mtpfs" | awk '{print $2}' | grep "home")
+devices=$(grep -e "/dev/sd\|simple-mtpfs" /etc/mtab | awk '{print $2}' | grep "home\|/mnt") 
 [ "$devices" = "" ] && exit 1
 chose=$(echo "$devices" | dmenu -c -p "Démonter quel appareil ?")
 [ "$chose" = "" ] && exit 1

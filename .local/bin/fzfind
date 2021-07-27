@@ -7,11 +7,8 @@ case $ext in
 	"pdf"|"epub")  zathura "$file" ;;
 	"jpg"|"png"|"svg"|"gif") sxiv "$file" ;;
 	"mp4")  mpv "$file" ;;
-	"zip") 
-		unzip "$file";
-		dir=$(echo "$file" | sed "s/.zip//g");
-		cd "$dir" || exit;;
-	*)	nvim "$file";;
+	"bz2"|"tbz2"|"tgz"|"zst"|"lzma"|"bz2"|"rar"|"gz"|"tar"|"zip"|"Z"|"7z"|"xz"|"exe") ext "$file" ;;
+	*)  nvim "$file";;
 
 esac
 		
