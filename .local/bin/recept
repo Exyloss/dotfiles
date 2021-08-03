@@ -1,0 +1,10 @@
+#!/bin/sh
+text=$(croc --yes "$(cat ~/.config/croc-passwd)")
+if [ "$text" != "" ]; then 
+	set -f
+	printf "%s\n\t" "$text"
+	printf "copier ?[o/N]"
+	read ans
+	[ $ans = "o" ] && echo "$text" | xsel --clipboard
+fi
+

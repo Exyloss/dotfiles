@@ -38,12 +38,10 @@ do
         case "$1" in
         "C-d")
                 mv "$file" ~/.trash ;;
-        "C-r")
-                convert -rotate 90 "$file" "$file" ;;
         "C-c")
                 echo -n "$file" | xclip -selection clipboard ;;
         "C-w")
-                nitrogen --save --set-zoom-fill "$file" ;;
+                xwallpaper --zoom "$file" ;;
 	"C-z")
 		dir=$(find ~/ | dmenu); mv "$file" "$dir"
         esac
