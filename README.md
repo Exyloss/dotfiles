@@ -15,3 +15,4 @@ Dépendances :
  - youtube-viewer-git (AUR)
  - lf (AUR)
  - libxft-bgra (AUR)
+ - croc
