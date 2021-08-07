@@ -1,7 +1,8 @@
 #!/bin/sh
 vol=$(pamixer --get-volume)
 [ "$(pamixer --get-mute)" = true ] && echo " MUTE" && exit 1
-[ "$vol" = 0 ] && echo "  0%" && exit 1
-[ "$vol" -lt 33 ] && echo " $vol%" && exit 1
-[ "$vol" -le 67 ] && echo " $vol%" && exit 1
-[ "$vol" -gt 67 ] && echo "  $vol%" && exit 1
+[ "$vol" = 0 ] && echo " 0%" && exit 1
+[ "$vol" -lt 30 ] && echo " $vol%" && exit 1
+[ "$vol" -lt 70 ] && echo " $vol%" && exit 1
+[ "$vol" -ge 70 ] && echo " $vol%" && exit 1
+

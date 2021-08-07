@@ -1,8 +1,0 @@
-#!/bin/sh
-
-NUM="${2:-5}"
-case "$1" in
-	toggle) pamixer -t ;;
-	up) pamixer -i "$NUM" ;;
-	down) pamixer -d "$NUM" ;;
-esac

@@ -66,7 +66,7 @@ static const struct arg args[] = {
 	//{ datetime, "%s",           "%F %T" },
 	//{ wifi_perc, "W: (%3s%% on ", "wlp8s0" },
     //{ netspeed_rx, "%sB/s  ", "wlp2s0" },
-	{ run_command, "%4s | ", "amixer -c 1 sget Master  | awk -F\"[][]\" '/%/ { print $2 }' | head -n1" },
+	{ run_command, "%4s | ", "sb-volume" },
 	//{ battery_perc, "[BAT  %s%]", "BAT0" },
 	{ ram_perc, "RAM  %s% | ", NULL },
 	{ datetime, "%s",           "%F %T" },
