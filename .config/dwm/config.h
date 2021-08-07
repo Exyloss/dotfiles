@@ -38,7 +38,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "St",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,	     NULL,     "qpdfview",     0,         0,	      0,	   1,        -1 },
 };
@@ -85,7 +85,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]     = { "dmenu_run", "-c", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]      = { "st", NULL };
+static const char *termcmd[]      = { "alacritty", NULL };
 static const char *volumep[]      = { "amixer", "-c", "1", "sset", "Master", "2%+",  NULL };
 static const char *volumem[]      = { "amixer", "-c", "1", "sset", "Master", "2%-",  NULL };
 static const char *lightm[]       = { "xbacklight", "-dec", "10", NULL };
@@ -94,7 +94,7 @@ static const char *firefox[]      = { "firefox", NULL };
 static const char *libreo[]       = { "libreoffice", NULL };
 static const char *codium[]       = { "vscodium", NULL };
 static const char *keepass[]      = { "keepassxc", NULL };
-static const char *fm[]           = { "st", "-e", "lf", NULL };
+static const char *fm[]           = { "alacritty", "-e", "lf", NULL };
 static const char *dmount[]       = { "dmount", NULL };
 static const char *dumount[]      = { "dumount", NULL };
 static const char *dmount_phone[] = { "dmount_phone", NULL };
