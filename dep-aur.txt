@@ -1,0 +1,4 @@
+simple-mtpfs
+youtube-viewer-git
+lf
+libxft-bgra

@@ -1,0 +1,12 @@
+pulseaudio
+dunst
+libnotify
+xcompmgr
+xwallpaper
+xorg
+zsh
+dash
+numlockx
+slock
+mpv
+croc
