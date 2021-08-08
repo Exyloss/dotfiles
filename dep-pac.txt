@@ -10,3 +10,8 @@ numlockx
 slock
 mpv
 croc
+mpc
+ncmpcpp
+mpd
+alacritty
+sxhkd
