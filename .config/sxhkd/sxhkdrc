@@ -15,3 +15,7 @@ XF86AudioLowerVolume
 	pamixer -d 2
 XF86AudioStop
 	mpc clear
+XF86MonBrightnessDown
+	xbacklight -dec 10
+XF86MonBrightnessUp
+	xbacklight -inc 10

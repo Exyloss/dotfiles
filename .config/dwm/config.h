@@ -1,5 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 #include <X11/XF86keysym.h>
+
+
+/* Constants */
+#define TERMINAL "st"
+#define TERMCLASS "St"
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx	    = 5;        /* border pixel of windows */
@@ -38,7 +44,7 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
-	{ "Alacritty",      NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ TERMCLASS,      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,	     NULL,     "qpdfview",     0,         0,	      0,	   1,        -1 },
 };
@@ -85,16 +91,12 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]     = { "dmenu_run", "-c", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]      = { "alacritty", NULL };
-static const char *volumep[]      = { "amixer", "-c", "1", "sset", "Master", "2%+",  NULL };
-static const char *volumem[]      = { "amixer", "-c", "1", "sset", "Master", "2%-",  NULL };
-static const char *lightm[]       = { "xbacklight", "-dec", "10", NULL };
-static const char *lightp[]       = { "xbacklight", "-inc", "10", NULL };
+static const char *termcmd[]      = { TERMINAL, NULL };
 static const char *firefox[]      = { "firefox", NULL };
 static const char *libreo[]       = { "libreoffice", NULL };
 static const char *codium[]       = { "vscodium", NULL };
 static const char *keepass[]      = { "keepassxc", NULL };
-static const char *fm[]           = { "alacritty", "-e", "lf", NULL };
+static const char *fm[]           = { TERMINAL, "-e", "lf", NULL };
 static const char *dmount[]       = { "dmount", NULL };
 static const char *dumount[]      = { "dumount", NULL };
 static const char *dmount_phone[] = { "dmount_phone", NULL };
@@ -149,10 +151,6 @@ static Key keys[] = {
 	{ MODKEY,              		XK_n,      shiftview,  	   {.i = +1 } },
 	{ MODKEY,              		XK_b,      shiftview,      {.i = -1 } },
 	{ MODKEY,			XK_e,	   spawn,          {.v = fm } },
-	{ 0,	                        XF86XK_AudioRaiseVolume,           spawn,          {.v = volumep } },
-	{ 0,				XF86XK_AudioLowerVolume,	   spawn,	   {.v = volumem } },
-	{ 0,				XF86XK_MonBrightnessDown,	   spawn,          {.v = lightm } },
-	{ 0,				XF86XK_MonBrightnessUp,	           spawn,	   {.v = lightp } },
 	{ MODKEY,			XK_w,	   spawn,	   {.v = firefox } },
 	{ MODKEY|ShiftMask,		XK_l,	   spawn,	   {.v = libreo } },
 	{ MODKEY,			XK_c,	   spawn, 	   {.v = codium } },
