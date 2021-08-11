@@ -1,0 +1,17 @@
+#Raccourcis universels
+super + d
+	dmenu_run -c
+XF86AudioNext
+	mpc next
+XF86AudioPrev
+	mpc prev
+XF86AudioPlay
+	mpc toggle
+XF86AudioMute
+	pamixer -t
+XF86AudioRaiseVolume
+	pamixer -i 2
+XF86AudioLowerVolume
+	pamixer -d 2
+XF86AudioStop
+	mpc clear
