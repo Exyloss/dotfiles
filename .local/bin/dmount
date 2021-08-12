@@ -2,17 +2,17 @@
 
 pgrep -x dmenu && exit
 
-android=$(simple-mtpfs -l | head -1 | awk '{print $1 $2}')
+android=$(simple-mtpfs -l | awk '{print $1 $2}')
 devnum=$(echo "$android" | awk -F ":" '{print $1}')
 echo "$devnum"
 [ "$android" = "No raw devices found." ] && android=""
 usb=$(lsblk -lp | grep "part $" | awk '{print $1}')
-devices=$(printf "%s\n%s" "$android" "$usb")
-[ "$devices" = "" ] && exit 1
+devices=$(printf "%s %s" "$android" "$usb")
+[ "$devices" = " " ] && exit 1
 chosen=$(echo "$devices" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Monter quel disque ?" | awk '{print $1}')
 echo "$chosen"
 [ "$chosen" = "" ] && exit 1
 dir=$(find ~ -type d -maxdepth 3 2>/dev/null)
 mountpoint=$(echo "$dir" | dmenu -c -nb "#000000" -sb "#192E4C" -i -p "Écrivez votre point de montage.")
 [ "$chosen" = "$android" ] && simple-mtpfs --device "$devnum" "$mountpoint" && notify-send "$(echo $android | awk -F ':' '{print $2}') monté en $mountpoint"
-[ "$chosen" != "$android" ] && sudo mount "$chosen" "$mountpoint" && pgrep -x dunst && notify-send "$chosen monté en $mountpoint."
+[ "$chosen" != "$android" ] && sudo mount "$chosen" "$mountpoint" && notify-send "$chosen monté en $mountpoint."

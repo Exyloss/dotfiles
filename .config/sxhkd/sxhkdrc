@@ -1,6 +1,14 @@
 #Raccourcis universels
-super + d
+super + a
 	dmenu_run -c
+super + shift + e
+	dpower
+super + m
+	dmount
+super + u
+	dumount
+super + shift + l
+	slock
 XF86AudioNext
 	mpc next
 XF86AudioPrev
