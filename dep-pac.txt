@@ -1,4 +1,5 @@
 pulseaudio
+pamixer
 dunst
 libnotify
 xcompmgr
