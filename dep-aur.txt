@@ -1,4 +1,7 @@
 simple-mtpfs
 youtube-viewer-git
-lf
+lf-git
 libxft-bgra
+gtk-theme-arc-gruvbox-git
+brave-bin
+sc-im
