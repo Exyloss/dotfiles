@@ -1,29 +1,39 @@
 #Raccourcis universels
-super + a
-	dmenu_run -c
 super + shift + e
 	dpower
+#super + q
+#	xdo close
+super + a
+	dmenu_run -c
 super + m
 	dmount
 super + u
 	dumount
 super + shift + l
 	slock
-XF86AudioNext
-	mpc next
-XF86AudioPrev
-	mpc prev
+super + w
+	"$TRUEBROWSER"
+super + e
+	"$TERMINAL" -e lf
+super + shift + Return
+	"$TERMINAL"
+Print
+	"$TERMINAL" -e fzopen
+Pause
+	mpc -q toggle
+Home
+	dpower
+super + shift + {p,n}
+	mpc -q {prev,next}
+XF86Audio{Prev,Next}
+	mpc -q {prev,next}
 XF86AudioPlay
-	mpc toggle
+	mpc -q toggle
 XF86AudioMute
-	pamixer -t
-XF86AudioRaiseVolume
-	pamixer -i 2
-XF86AudioLowerVolume
-	pamixer -d 2
+	pamixer -t; kill -45 $(pidof dwmblocks)
+XF86Audio{Raise,Lower}Volume
+	pamixer -{i,d} 2; kill -45 $(pidof dwmblocks)
 XF86AudioStop
 	mpc clear
-XF86MonBrightnessDown
-	xbacklight -dec 10
-XF86MonBrightnessUp
-	xbacklight -inc 10
+XF86MonBrightness{Down,Up}
+	xbacklight -{dec,inc} 10
