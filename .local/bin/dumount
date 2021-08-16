@@ -1,9 +1,4 @@
 #!/bin/sh
-
-pgrep -x dmenu && exit
-
-devices=$(grep -e "/dev/sd\|simple-mtpfs" /etc/mtab | awk '{print $2}' | grep "home\|/mnt") 
-[ "$devices" = "" ] && exit 1
-chose=$(echo "$devices" | dmenu -c -p "Démonter quel appareil ?")
-[ "$chose" = "" ] && exit 1
-sudo umount "$chose" && notify-send "$chose démonté"
+devices=$(grep -e "/dev/sd\|simple-mtpfs" /etc/mtab | awk '{print $2}' | grep "/home") || exit 1
+chose=$(echo "$devices" | dmenu -c -p "Démonter quel appareil ?") || exit 1
+sudo -A umount "$chose" && notify-send "$chose démonté"
