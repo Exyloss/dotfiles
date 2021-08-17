@@ -4,7 +4,7 @@ super + shift + e
 #super + q
 #	xdo close
 super + a
-	dmenu_run -c
+	dmenu_run
 super + m
 	dmount
 super + u
@@ -15,7 +15,7 @@ super + w
 	"$TRUEBROWSER"
 super + e
 	"$TERMINAL" -e lf
-super + shift + Return
+super + Return
 	"$TERMINAL"
 Print
 	"$TERMINAL" -e fzopen
