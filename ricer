@@ -1,0 +1,21 @@
+#!/bin/sh
+# Ce script permet d'installer tous les scripts et fichiers de config
+echo "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. (O/n)"
+read choise
+if [ "$choise" = "o" ]; then
+	cp -r .local/bin/ ~/.local/
+	cp -r .config ~/
+	cp .xinitrc .zshenv ~/
+	cd ~/.config/dmenu
+	sudo make clean install
+	cd ../dwm
+	sudo make clean install
+	cd ../dwmblocks
+	sudo make clean install
+	echo "\nSouhaitez-vous installer les dépendances ? (o/n)"
+	read ans
+	[ "$ans" = "o" ] && cd ~/dotfiles && sh dep-install
+	exit 1
+fi
+echo "Opération annulée."
+exit 1

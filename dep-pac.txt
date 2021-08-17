@@ -31,3 +31,4 @@ fzf
 exfat-utils
 zathura
 zathura-pdf-mupdf
+sxiv
