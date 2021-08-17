@@ -5,7 +5,6 @@ include config.mk
 
 SRC = drw.c dmenu.c stest.c util.c
 OBJ = $(SRC:.c=.o)
-
 all: options dmenu stest
 
 options:

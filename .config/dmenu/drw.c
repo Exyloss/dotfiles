@@ -136,6 +136,19 @@ xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)
 		die("no font specified.");
 	}
 
+	/* Do not allow using color fonts. This is a workaround for a BadLength
+	 * error from Xft with color glyphs. Modelled on the Xterm workaround. See
+	 * https://bugzilla.redhat.com/show_bug.cgi?id=1498269
+	 * https://lists.suckless.org/dev/1701/30932.html
+	 * https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=916349
+	 * and lots more all over the internet.
+	 */
+	FcBool iscol;
+	if(FcPatternGetBool(xfont->pattern, FC_COLOR, 0, &iscol) == FcResultMatch && iscol) {
+		XftFontClose(drw->dpy, xfont);
+		return NULL;
+	}
+
 	font = ecalloc(1, sizeof(Fnt));
 	font->xfont = xfont;
 	font->pattern = pattern;
@@ -299,8 +312,11 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 		if (utf8strlen) {
 			drw_font_getexts(usedfont, utf8str, utf8strlen, &ew, NULL);
 			/* shorten text if necessary */
-			for (len = MIN(utf8strlen, sizeof(buf) - 1); len && ew > w; len--)
-				drw_font_getexts(usedfont, utf8str, len, &ew, NULL);
+			if (ew > w)
+				for (ew = 0, len = 0; ew < w - lpad * 2 && len < MIN(utf8strlen, sizeof(buf) - 1); len++)
+					drw_font_getexts(usedfont, utf8str, len, &ew, NULL);
+			else
+				len = MIN(utf8strlen, sizeof(buf) - 1);
 
 			if (len) {
 				memcpy(buf, utf8str, len);

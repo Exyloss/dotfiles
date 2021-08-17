@@ -102,15 +102,6 @@ calcoffsets(void)
 			break;
 }
 
-static int
-max_textw(void)
-{
-	int len = 0;
-	for (struct item *item = items; item && item->text; item++)
-		len = MAX(TEXTW(item->text), len);
-	return len;
-}
-
 static void
 cleanup(void)
 {
@@ -515,9 +506,11 @@ keypress(XKeyEvent *ev)
 			                  utf8, utf8, win, CurrentTime);
 			return;
 		case XK_Left:
+		case XK_KP_Left:
 			movewordedge(-1);
 			goto draw;
 		case XK_Right:
+		case XK_KP_Right:
 			movewordedge(+1);
 			goto draw;
 		case XK_Return:
@@ -555,6 +548,7 @@ insert:
 			insert(buf, len);
 		break;
 	case XK_Delete:
+	case XK_KP_Delete:
 		if (text[cursor] == '\0')
 			return;
 		cursor = nextrune(+1);
@@ -565,6 +559,7 @@ insert:
 		insert(NULL, nextrune(-1) - cursor);
 		break;
 	case XK_End:
+	case XK_KP_End:
 		if (text[cursor] != '\0') {
 			cursor = strlen(text);
 			break;
@@ -584,6 +579,7 @@ insert:
 		cleanup();
 		exit(1);
 	case XK_Home:
+	case XK_KP_Home:
 		if (sel == matches) {
 			cursor = 0;
 			break;
@@ -592,6 +588,7 @@ insert:
 		calcoffsets();
 		break;
 	case XK_Left:
+	case XK_KP_Left:
 		if (cursor > 0 && (!sel || !sel->left || lines > 0)) {
 			cursor = nextrune(-1);
 			break;
@@ -600,18 +597,21 @@ insert:
 			return;
 		/* fallthrough */
 	case XK_Up:
+	case XK_KP_Up:
 		if (sel && sel->left && (sel = sel->left)->right == curr) {
 			curr = prev;
 			calcoffsets();
 		}
 		break;
 	case XK_Next:
+	case XK_KP_Next:
 		if (!next)
 			return;
 		sel = curr = next;
 		calcoffsets();
 		break;
 	case XK_Prior:
+	case XK_KP_Prior:
 		if (!prev)
 			return;
 		sel = curr = prev;
@@ -628,6 +628,7 @@ insert:
 			sel->out = 1;
 		break;
 	case XK_Right:
+	case XK_KP_Right:
 		if (text[cursor] != '\0') {
 			cursor = nextrune(+1);
 			break;
@@ -636,6 +637,7 @@ insert:
 			return;
 		/* fallthrough */
 	case XK_Down:
+	case XK_KP_Down:
 		if (sel && sel->right && (sel = sel->right) == next) {
 			curr = next;
 			calcoffsets();
@@ -771,7 +773,6 @@ setup(void)
 	bh = drw->fonts->h + 2;
 	lines = MAX(lines, 0);
 	mh = (lines + 1) * bh;
-	promptw = (prompt && *prompt) ? TEXTW(prompt) - lrpad / 4 : 0;
 #ifdef XINERAMA
 	i = 0;
 	if (parentwin == root && (info = XineramaQueryScreens(dpy, &n))) {
@@ -798,15 +799,9 @@ setup(void)
 				if (INTERSECT(x, y, 1, 1, info[i]))
 					break;
 
-	if (centered) {
-		mw = MIN(MAX(max_textw() + promptw, min_width), info[i].width);
-		x = info[i].x_org + ((info[i].width  - mw) / 2);
-		y = info[i].y_org + ((info[i].height - mh) / 2);
-	} else {
 		x = info[i].x_org;
 		y = info[i].y_org + (topbar ? 0 : info[i].height - mh);
 		mw = info[i].width;
-	}
 
 		XFree(info);
 	} else
@@ -815,17 +810,11 @@ setup(void)
 		if (!XGetWindowAttributes(dpy, parentwin, &wa))
 			die("could not get embedding window attributes: 0x%lx",
 			    parentwin);
-
-		if (centered) {
-			mw = MIN(MAX(max_textw() + promptw, min_width), wa.width);
-			x = (wa.width  - mw) / 2;
-			y = (wa.height - mh) / 2;
-		} else {
-			x = 0;
-			y = topbar ? 0 : wa.height - mh;
-			mw = wa.width;
-		}
+		x = 0;
+		y = topbar ? 0 : wa.height - mh;
+		mw = wa.width;
 	}
+	promptw = (prompt && *prompt) ? TEXTW(prompt) - lrpad / 4 : 0;
 	inputw = MIN(inputw, mw/3);
 	match();
 
@@ -838,7 +827,6 @@ setup(void)
 	win = XCreateWindow(dpy, parentwin, x, y, mw, mh, border_width,
 	                    depth, CopyFromParent, visual,
 	                    CWOverrideRedirect | CWBackPixel | CWBorderPixel | CWColormap | CWEventMask, &swa);
-	XSetWindowBorder(dpy, win, scheme[SchemeSel][ColBg].pixel);
 	XSetClassHint(dpy, win, &ch);
 
 
@@ -867,7 +855,7 @@ static void
 usage(void)
 {
 	fputs("usage: dmenu [-bfivP] [-l lines] [-p prompt] [-fn font] [-m monitor]\n"
-	      "             [-nb color] [-nf color] [-sb color] [-sf color]\n"
+	      "             [-nb color] [-nf color] [-sb color] [-sf color] [-P password]\n"
 	      "             [-nhb color] [-nhf color] [-shb color] [-shf color] [-w windowid]\n", stderr);
 	exit(1);
 }
@@ -889,8 +877,6 @@ main(int argc, char *argv[])
 			fast = 1;
 		else if (!strcmp(argv[i], "-F"))   /* grabs keyboard before reading stdin */
 			fuzzy = 0;
-		else if (!strcmp(argv[i], "-c"))   /* centers dmenu on screen */
-			centered = 1;
 		else if (!strcmp(argv[i], "-i")) { /* case-insensitive item matching */
 			fstrncmp = strncasecmp;
 			fstrstr = cistrstr;
