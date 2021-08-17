@@ -1,0 +1,4 @@
+#!/bin/sh
+status=$(acpi | awk '{print $3}')
+[ "$status" = "Charging," ] && echo "⚡$(acpi | awk -F ',' '{print $2}')" && exit 1
+echo "🔋$(acpi | awk -F ',' '{print $2}')"
