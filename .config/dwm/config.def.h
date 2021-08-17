@@ -11,14 +11,14 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "monospace:size=10", "JoyPixels:pixelsize=8:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = 0x90;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -47,7 +47,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -100,23 +100,23 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
-	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
-	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	//{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
+	//{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_agrave, togglegaps,     {0} },
+	//{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,	                XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -130,16 +130,16 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_ampersand,                      0)
-	TAGKEYS(                        XK_eacute,                      1)
-	TAGKEYS(                        XK_quotedbl,                      2)
-	TAGKEYS(                        XK_apostrophe,                      3)
-	TAGKEYS(                        XK_parenleft,                      4)
-	TAGKEYS(                        XK_minus,                      5)
-	TAGKEYS(                        XK_egrave,                      6)
-	TAGKEYS(                        XK_underscore,                      7)
-	TAGKEYS(                        XK_ccedilla,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	TAGKEYS(                        XK_ampersand,              0)
+	TAGKEYS(                        XK_eacute,                 1)
+	TAGKEYS(                        XK_quotedbl,               2)
+	TAGKEYS(                        XK_apostrophe,             3)
+	TAGKEYS(                        XK_parenleft,              4)
+	TAGKEYS(                        XK_minus,                  5)
+	TAGKEYS(                        XK_egrave,                 6)
+	TAGKEYS(                        XK_underscore,             7)
+	TAGKEYS(                        XK_ccedilla,               8)
 };
 
 /* button definitions */
