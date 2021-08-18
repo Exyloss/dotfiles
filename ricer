@@ -11,9 +11,9 @@ if [ "$choise" = "o" ]; then
 	sudo make clean install
 	cd ../dwm
 	sudo make clean install
-	git clone https://github.com/torrinfail/dwmblocks ~/dwmblocks
-	cp ~/.config/dwmblocks/blocks.def.h ~/dwmblocks/
-	mv dwmblocks ~/.config/
+	cd ../dwmblocks
+	sudo make clean install
+	cd
 	exit 1
 fi
 echo "Opération annulée."

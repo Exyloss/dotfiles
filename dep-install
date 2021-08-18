@@ -2,7 +2,7 @@
 # Ce script installe les dépendances de l'AUR.
 
 sudo pacman -S - < ~/dotfiles/dep-pac.txt
-git clone https://aur.archlinux.org/paru ~/paru
-cd ~/paru
+git clone https://aur.archlinux.org/yay ~/yay
+cd ~/yay
 makepkg -si
-paru -S - < ~/dotfiles/dep-aur.txt
+yay -S - < ~/dotfiles/dep-aur.txt

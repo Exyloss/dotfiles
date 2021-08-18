@@ -1,5 +1,7 @@
-pulseaudio
+alsa-utils
+alsa-utils-runit
 pulseaudio-alsa
+pulseaudio
 pamixer
 dunst
 libnotify
