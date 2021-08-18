@@ -6,7 +6,7 @@ printf "Que souhaitez vous envoyer ?"
 type=$(printf "Texte\nFichier" | fzf)
 [ "$type" = "" ] && exit 1
 if [ "$type" = "Texte" ]; then 
-	printf "Écrivez le texte à envoyer"
+	printf "Écrivez le texte à envoyer : "
 	set -f
 	read -r ans
 	[ "$ans" = "" ] && exit 1

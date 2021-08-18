@@ -2,10 +2,8 @@
 
 BROWSER="surf" #Vous pouvez remplacer surf par un navigateur plus classique comme brave ou firefox
 engine=$(cat ~/.config/engine-list) #Adapter selon la position du fichier listant les moteurs de recherche
-choise=$(echo "$engine" | dmenu -c -p "Choisissez un moteur de recherche.")
-[ "$choise" = "" ] &&  exit 1
-search=$(echo "" | dmenu -c -p "Saisissez votre recherche")
-[ "$search" = "" ] && exit 1
+choise=$(echo "$engine" | dmenu -c -l 10 -p "Choisissez un moteur de recherche.") || exit 1
+search=$(echo "" | dmenu -c -l 10 -p "Saisissez votre recherche") || exit 1
 search=$(echo "$search" | tr " " "+")
-choise=$(echo "$choise" | awk '{print $NF}')
+choise=${choise##* }
 "$BROWSER" "$choise$search"

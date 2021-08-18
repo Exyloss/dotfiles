@@ -4,7 +4,7 @@ echo "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront r
 read choise
 if [ "$choise" = "o" ]; then
 	sh dep-install
-	cp -r .local/bin/ ~/.local/
+	cp -r .local/bin ~/.local/
 	cp -r .config ~/
 	cp .xinitrc .zshenv ~/
 	cd ~/.config/dmenu
