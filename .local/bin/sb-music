@@ -1,0 +1,5 @@
+#!/bin/sh
+current=$(mpc current)
+[ "$current" = "" ] && exit 1
+percent=$(mpc | head -2 | tail -1 | awk '{print $3}')
+echo " $current $percent"
