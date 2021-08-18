@@ -2,19 +2,21 @@
 let mapleader =" "
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'junegunn/goyo.vim'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set nocompatible
+
 " Titre de la fenêtre du terminal
 set title
 
-set number
+set relativenumber number
 syntax on
 filetype plugin on
+
 " Permet le scroll avec la souris et de passer automatiquement en mode VISUEL
 set mouse=nicr
 set mouse=a
@@ -30,7 +32,6 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ }
-
 " Remap splits navigation to just CTRL + hjkl
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -59,16 +60,16 @@ map <leader>c :w! \| !compiler "<c-r>%"<CR>
 " Ouvrir le terminal dans vim
 map <Leader>tt :vnew term://zsh<CR>
 
-
+let g:gruvbox_transparent_bg = 1
+colorscheme gruvbox
 " Template de page html vide
 autocmd FileType html inoremap ;h <!DOCTYPE html><CR><html><CR><head><CR><link rel="stylesheet" href="style.css"><CR><meta charset="utf-8"><CR><title></title><CR></head><CR><body><CR><CR></body><CR></html><Esc>
 
-nnoremap <F5> :GundoToggle<CR>
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
-" Modification du mode VISUEL et des commentaire
+
 highlight Visual           guifg=#dfdfdf ctermfg=1    guibg=#1c1f24 ctermbg=none  cterm=none
 highlight Comment          cterm=italic
-
+autocmd VimEnter * hi Normal ctermbg=none
