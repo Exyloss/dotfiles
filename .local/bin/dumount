@@ -1,4 +1,4 @@
 #!/bin/sh
-devices=$(grep -e "/dev/sd\|simple-mtpfs" /etc/mtab | awk '{print $2}' | grep "/home") || exit 1
-chose=$(echo "$devices" | dmenu -c -p "Démonter quel appareil ?") || exit 1
+devices=$(grep "/dev/sd\|simple-mtpfs" /etc/mtab | grep "/home" | awk '{print $1" : "$2}') || exit 1
+chose=$(echo "$devices" | dmenu -l 10 -p "Démonter quel appareil ?") || exit 1
 sudo -A umount "$chose" && notify-send "$chose démonté"
