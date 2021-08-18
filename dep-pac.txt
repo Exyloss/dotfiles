@@ -17,10 +17,11 @@ croc
 bc
 unzip
 mpc
-ttf-linux-libertine
-noto-fonts-emoji
+noto-fonts
 ncmpcpp
 lxappearance
+breeze-gtk
+papirus-icon-theme
 xclip
 xsel
 dosfstools

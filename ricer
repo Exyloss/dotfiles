@@ -3,6 +3,7 @@
 echo "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. (O/n)"
 read choise
 if [ "$choise" = "o" ]; then
+	sh dep-install
 	cp -r .local/bin/ ~/.local/
 	cp -r .config ~/
 	cp .xinitrc .zshenv ~/
@@ -10,11 +11,9 @@ if [ "$choise" = "o" ]; then
 	sudo make clean install
 	cd ../dwm
 	sudo make clean install
-	cd ../dwmblocks
-	sudo make clean install
-	echo "\nSouhaitez-vous installer les dépendances ? (o/n)"
-	read ans
-	[ "$ans" = "o" ] && cd ~/dotfiles && sh dep-install
+	git clone https://github.com/torrinfail/dwmblocks ~/dwmblocks
+	cp ~/.config/dwmblocks/blocks.def.h ~/dwmblocks/
+	mv dwmblocks ~/.config/
 	exit 1
 fi
 echo "Opération annulée."
