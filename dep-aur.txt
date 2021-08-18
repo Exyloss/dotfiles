@@ -5,3 +5,4 @@ libxft-bgra
 gtk-theme-arc-gruvbox-git
 brave-bin
 sc-im
+mkinitcpio-numlock

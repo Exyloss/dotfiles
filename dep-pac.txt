@@ -1,10 +1,12 @@
 pulseaudio
+pulseaudio-alsa
 pamixer
 dunst
 libnotify
 xcompmgr
 xwallpaper
 xorg
+xorg-xinit
 zsh
 dash
 numlockx
@@ -32,3 +34,4 @@ exfat-utils
 zathura
 zathura-pdf-mupdf
 sxiv
+htop
