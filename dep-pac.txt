@@ -38,3 +38,4 @@ zathura
 zathura-pdf-mupdf
 sxiv
 htop
+acpi
