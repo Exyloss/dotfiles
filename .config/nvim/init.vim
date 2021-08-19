@@ -1,3 +1,10 @@
+"    ______           __
+"   / ____/  ____  __/ /___  _____
+"  / __/ | |/_/ / / / / __ \/ ___/
+" / /____>  </ /_/ / / /_/ (__  )
+"/_____/_/|_|\__, /_/\____/____/
+"           /____/
+
 " Touche utilisée comme <leader>
 let mapleader =" "
 
@@ -6,6 +13,7 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'morhetz/gruvbox'
+Plug 'cocopon/lightline-hybrid.vim'
 call plug#end()
 
 set nocompatible
@@ -29,9 +37,9 @@ set splitbelow splitright
 set noshowmode
 
 " Thème de la barre
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
+let g:lightline = {}
+let g:lightline.colorscheme = 'hybrid'
+
 " Remap splits navigation to just CTRL + hjkl
 map <C-h> <C-w>h
 map <C-j> <C-w>j
