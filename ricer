@@ -1,6 +1,6 @@
 #!/bin/sh
 # Ce script permet d'installer tous les scripts et fichiers de config
-echo "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. (O/n)"
+printf "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. [o/N]"
 read choise
 if [ "$choise" = "o" ]; then
 	sh dep-install
@@ -14,6 +14,8 @@ if [ "$choise" = "o" ]; then
 	cd ../dwmblocks
 	sudo make clean install
 	cd
+	chsh "$(whoami)" -s /usr/bin/zsh
+	sudo ln -sfT dash /usr/bin/sh
 	exit 1
 fi
 echo "Opération annulée."
