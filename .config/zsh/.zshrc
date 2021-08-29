@@ -67,5 +67,8 @@ bindkey '^e' edit-command-line
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+eval "$(lua ~/.local/bin/z.lua --init zsh enhanced)"
+
 # Load zsh-syntax-highlighting; should be last.
+#source /usr/share/zsh/plugins/fsh/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
