@@ -14,7 +14,7 @@ if [ "$choise" = "o" ]; then
 	cd ../dwmblocks
 	sudo make clean install
 	cd
-	chsh "$(whoami)" -s /usr/bin/zsh
+	chsh -s /bin/zsh $(whoami)
 	sudo ln -sfT dash /usr/bin/sh
 	exit 1
 fi
