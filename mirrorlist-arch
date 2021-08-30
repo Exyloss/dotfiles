@@ -1,0 +1,3 @@
+Server = https://mirror.f4st.host/archlinux/$repo/os/$arch
+Server = https://mirror.selfnet.de/archlinux/$repo/os/$arch
+
