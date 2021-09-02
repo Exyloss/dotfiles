@@ -4,23 +4,29 @@
 
 
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
-export LC_MESSAGES="fr"
-export LANG="fr"
-export SUDO_ASKPASS="$HOME/.local/bin/dpass"
 export XDG_CONFIG_HOME="$HOME/.config"
-export CARGO_HOME="$HOME/.local/share/cargo"
-export GOPATH="$HOME/.local/share/go"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
-export LANG=fr_FR.UTF-8
+export TERM="xterm-256color"
+export LC_MESSAGES="fr_FR.utf-8"
+export LANG="fr_FR.utf-8"
+export SUDO_ASKPASS="$HOME/.local/bin/dpass"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
+export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export ZDOTDIR=$HOME/.config/zsh
 export READER="zathura"
 export EDITOR="nvim"
+export VISUAL="nvim"
 export TRUEBROWSER="brave"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export LESSHISTFILE=-
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
+export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 export LF_ICONS="di=📁:\
 fi=📃:\
 tw=🤝:\

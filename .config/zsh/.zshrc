@@ -10,6 +10,9 @@ HISTFILE=~/.cache/zsh/history
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -17,7 +20,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-bindkey -s '^f' 'fzfind\n'
+bindkey -s '^f' 'se\n'
 bindkey -s '^r' 'source ~/.config/zsh/.zshrc\n'
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -68,7 +71,7 @@ bindkey '^e' edit-command-line
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 eval "$(lua ~/.local/bin/z.lua --init zsh enhanced)"
+eval "$(starship init zsh)"
 
-# Load zsh-syntax-highlighting; should be last.
-#source /usr/share/zsh/plugins/fsh/zsh-syntax-highlighting.zsh 2>/dev/null
+
 source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null

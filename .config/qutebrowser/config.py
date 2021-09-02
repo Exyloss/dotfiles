@@ -56,8 +56,7 @@ c.url.start_pages = ['~/.config/qutebrowser/page.html']
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'am': 'https://www.amazon.com/s?k={}', 'aw': 'https://wiki.archlinux.org/?search={}', 'goog': 'https://www.google.com/search?q={}', 're': 'https://www.reddit.com/r/{}', 'wiki': 'https://fr.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}'}
-
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?kae=t&kk=-1&k1=-1&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kau=-1&kz=1&kl=wt-wt&kad=fr_FR&q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 're': 'https://www.reddit.com/r/{}', 'wiki': 'https://fr.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}'}
 
 
 # Foreground color of the statusbar in insert mode.
@@ -98,7 +97,6 @@ c.fonts.statusbar = '11pt "SauceCodePro Nerd Font"'
 # Bindings for normal mode
 config.bind('M', 'hint links spawn mpv {hint-url}')
 config.bind('Z', 'hint links spawn alacritty -e youtube-dl {hint-url}')
-config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')

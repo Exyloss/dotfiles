@@ -10,3 +10,5 @@ settings:
     global: never
   tabs.show:
     global: always
+  colors.webpage.prefers_color_scheme_dark:
+    global: true 

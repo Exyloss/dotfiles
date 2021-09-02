@@ -20,6 +20,7 @@ bc
 unzip
 mpc
 noto-fonts
+noto-fonts-emoji
 ncmpcpp
 lxappearance
 breeze-gtk
@@ -33,6 +34,7 @@ mpd
 alacritty
 sxhkd
 fzf
+fzy
 exfat-utils
 zathura
 zathura-pdf-mupdf
@@ -40,3 +42,4 @@ sxiv
 htop
 acpi
 lua
+starship
