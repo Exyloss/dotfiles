@@ -2,9 +2,12 @@
 # Ce script installe les dépendances de l'AUR.
 
 dep=$(cat dep-pac.txt)
+sudo pacman -Sy --noconfirm archlinux-keyring
+
 for i in $dep
 do
-	sudo pacman --no-confirm --needed -S "$i"
+	sudo pacman -S --noconfirm --needed "$i"
+done
 git clone https://aur.archlinux.org/yay ~/yay
 cd ~/yay
 makepkg -si
