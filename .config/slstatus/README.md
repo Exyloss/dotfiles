@@ -1,2 +1,0 @@
-# slstatus
-suckless status monitor
