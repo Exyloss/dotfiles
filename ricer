@@ -16,6 +16,9 @@ if [ "$choise" = "o" ]; then
 	cd
 	chsh -s /bin/zsh $(whoami)
 	sudo ln -sfT dash /usr/bin/sh
+        git clone https://github.com/lukesmithxyz/st
+        cd st
+        sudo make clean install
 	exit 1
 fi
 echo "Opération annulée."
