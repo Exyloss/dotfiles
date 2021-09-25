@@ -14,6 +14,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'morhetz/gruvbox'
 Plug 'cocopon/lightline-hybrid.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 set nocompatible
@@ -23,18 +25,26 @@ set title
 
 set relativenumber number
 syntax on
-filetype plugin on
+filetype indent on
 
 " Permet le scroll avec la souris et de passer automatiquement en mode VISUEL
 set mouse=nicr
 set mouse=a
-
+set hidden
 set clipboard+=unnamedplus
+set incsearch
 set nohlsearch
+set smartcase
 set noruler
 set wildmode=longest,list,full
 set splitbelow splitright
 set noshowmode
+set noerrorbells
+set noswapfile
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+set scrolloff=8
 
 " Thème de la barre
 let g:lightline = {}
@@ -70,6 +80,7 @@ map <Leader>tt :vnew term://zsh<CR>
 
 let g:gruvbox_transparent_bg = 1
 colorscheme gruvbox
+autocmd VimEnter * hi Normal ctermbg=none
 " Template de page html vide
 autocmd FileType html inoremap ;h <!DOCTYPE html><CR><html><CR><head><CR><link rel="stylesheet" href="style.css"><CR><meta charset="utf-8"><CR><title></title><CR></head><CR><body><CR><CR></body><CR></html><Esc>
 
@@ -80,4 +91,3 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 highlight Visual           guifg=#dfdfdf ctermfg=1    guibg=#1c1f24 ctermbg=none  cterm=none
 highlight Comment          cterm=italic
-autocmd VimEnter * hi Normal ctermbg=none
