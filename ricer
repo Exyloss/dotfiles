@@ -16,6 +16,11 @@ if [ "$choise" = "o" ]; then
 	cd
 	chsh -s /bin/zsh $(whoami)
 	sudo ln -sfT dash /usr/bin/sh
+	sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
+	set -f
+	printf "souhaitez-vous installer st ? (o/N)"
+	read ans
+	[ "$ans" = "o" ] && git clone https://github.com/lukesmithxyz/st && cd st && sudo make clean install && cd ..
 	exit 1
 fi
 echo "Opération annulée."

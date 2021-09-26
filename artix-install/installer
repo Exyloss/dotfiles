@@ -11,7 +11,7 @@ grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ln -s /etc/runit/sv/NetworkManager /etc/runit/runsvdir/default
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-printf "mot de passe utilisateur root : \n"
+printf "mot de passe de root : "
 passwd
 set -f
 printf "nom de l'utilisateur à créer : "
@@ -19,4 +19,4 @@ read ans
 useradd -mg wheel "$ans"
 printf "mot de passe de %s : \n" "$ans"
 passwd "$ans"
-printf "===============\nscript terminé.\n==============="
+printf "script terminé."
