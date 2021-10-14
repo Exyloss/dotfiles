@@ -19,6 +19,7 @@ if [ "$choise" = "o" ]; then
         git clone https://github.com/lukesmithxyz/st
         cd st
         sudo make clean install
+	sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
 	exit 1
 fi
 echo "Opération annulée."

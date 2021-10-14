@@ -1,13 +1,13 @@
 #!/bin/sh
 
 if [ "$1" = "son" ]; then
+	song=$(mpc listall | fzy) || exit 1
 	mpc -q clear
-	song=$(mpc listall | fzf)
 	mpc insert "$song"
 	mpc play
 elif [ "$1" = "album" ]; then
+	album=$(mpc lsplaylists | fzy) || exit 1
 	mpc -q clear
-	album=$(mpc lsplaylists | fzf)
 	mpc load -q "$album"
 	mpc play
 fi

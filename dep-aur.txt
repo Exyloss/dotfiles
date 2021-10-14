@@ -5,3 +5,4 @@ libxft-bgra
 brave-bin
 sc-im
 mkinitcpio-numlock
+epson-inkjet-printer-escpr2
