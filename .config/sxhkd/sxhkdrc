@@ -1,20 +1,20 @@
 #Raccourcis universels
 super + shift + e
 	dpower
-#super + q
-#	xdo close
 super + a
 	dmenu_run
-super + m
+super + shift + m
 	dmount
-super + u
+super + shift + u
 	dumount
+super + w
+	"$BROWSER"
+super + n
+	"$TERMINAL" -t spterm -e ncmpcpp
 super + shift + l
 	slock
-super + w
-	"$TRUEBROWSER"
 super + e
-	"$TERMINAL" -e lf
+	"$TERMINAL" -t spterm -e lf
 super + Return
 	"$TERMINAL"
 Print
@@ -37,3 +37,5 @@ XF86AudioStop
 	mpc clear
 XF86MonBrightness{Down,Up}
 	xbacklight -{dec,inc} 10
+super + Escape
+	pkill -USR1 -x sxhkd
