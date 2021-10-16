@@ -227,7 +227,7 @@ hi BufferVisibleTarget guifg=#ce6f8f ctermfg=168 guibg=#0f111b ctermbg=233 gui=N
 hi BufferInactiveTarget guifg=#ce6f8f ctermfg=168 guibg=#0f111b ctermbg=233 gui=NONE cterm=NONE
 
 
-hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
+hi Normal          guifg=#ecf0c1 guibg=#1B1D1E
 hi Comment         guifg=#50587F
 hi CursorLine                    guibg=NONE
 hi CursorLineNr    guifg=#FD971F               gui=none
