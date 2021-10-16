@@ -11,13 +11,13 @@ static int min_width = 500;                    /* minimum width when centered */
 static const char *fonts[] = {"monospace:size=10", "JoyPixels:pixelsize=8:antialias=true:autohint=true"};
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 // cyan = "#005577"
-// magenta = "#694bbb"
+// magenta = "#371F79"
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] = { "#bbbbbb", "#000000" },
-	[SchemeSel] = { "#eeeeee", "#694bbb" },
-	[SchemeSelHighlight] = { "#353c67", "#694bbb" },
-	[SchemeNormHighlight] = { "#686f9a", "#000000" },
+	[SchemeSel] = { "#eeeeee", "#371F79" },
+	[SchemeSelHighlight] = { "#ffc978", "#371F79" },
+	[SchemeNormHighlight] = { "#ffc978", "#000000" },
 	[SchemeOut] = { "#000000", "#00ffff" },
 };
 
