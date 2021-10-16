@@ -13,9 +13,10 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'morhetz/gruvbox'
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 set nocompatible
@@ -42,9 +43,9 @@ set noshowmode
 set noerrorbells
 set noswapfile
 set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
+set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 set scrolloff=8
+set termguicolors
 
 " Thème de la barre
 let g:lightline = {}
@@ -78,16 +79,32 @@ map <leader>c :w! \| !compiler "<c-r>%"<CR>
 " Ouvrir le terminal dans vim
 map <Leader>tt :vnew term://zsh<CR>
 
+
+" Gruvbox
 let g:gruvbox_transparent_bg = 1
-colorscheme gruvbox
+" colorscheme gruvbox
+
+" Spaceduck
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" colorscheme spaceduck
+
+" JellyBeans
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+let g:jellybeans_overrides['background']['guibg'] = 'none'
+" colorscheme jellybeans2
+colorscheme spaceduck3
+
+
 autocmd VimEnter * hi Normal ctermbg=none
 " Template de page html vide
 autocmd FileType html inoremap ;h <!DOCTYPE html><CR><html><CR><head><CR><link rel="stylesheet" href="style.css"><CR><meta charset="utf-8"><CR><title></title><CR></head><CR><body><CR><CR></body><CR></html><Esc>
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-
-
-highlight Visual           guifg=#dfdfdf ctermfg=1    guibg=#1c1f24 ctermbg=none  cterm=none
-highlight Comment          cterm=italic
+" Commentaires en italique
+highlight Comment cterm=italic
+" Forcer le fond du terminal transparent
+hi Normal ctermbg=NONE guibg=NONE
