@@ -70,8 +70,6 @@ bindkey '^e' edit-command-line
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-eval "$(lua ~/.local/bin/z.lua --init zsh enhanced)"
 eval "$(starship init zsh)"
-
 
 source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
