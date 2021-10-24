@@ -1,0 +1,10 @@
+#!/bin/sh
+music=$(mpc listall)
+album=$(echo "$music" | awk -F '/' '{print $2}' | tr " " "_")
+for i in $album
+do
+	i2=$(echo "$i" | tr "_" " ")
+	imus=$(echo "$music" | grep "$i2/")
+	echo "$imus"
+	echo "$imus" > "$i".m3u
+done
