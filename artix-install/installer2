@@ -1,0 +1,22 @@
+#!/bin/sh
+cp sudoers /etc/
+cp mirrorlist-arch /etc/pacman.d/
+cp pacman.conf /etc/
+cp locale.gen /etc/
+locale-gen
+sudo pacman -Syu
+sudo pacman -S networkmanager networkmanager-runit grub efibootmgr
+echo "KEYMAP=fr" > /etc/vconsole.conf
+grub-install --target=i386-pc /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+ln -s /etc/runit/sv/NetworkManager /etc/runit/runsvdir/default
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+printf "mot de passe de root : "
+passwd
+set -f
+printf "nom de l'utilisateur à créer : "
+read ans
+useradd -mg wheel "$ans"
+printf "mot de passe de %s : \n" "$ans"
+passwd "$ans"
+printf "script terminé."
