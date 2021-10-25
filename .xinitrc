@@ -1,12 +1,13 @@
 setxkbmap fr ;
-exec sxhkd &
-exec xrdb .config/x11/Xresources &
-exec numlockx &
-exec xcompmgr &
-exec unclutter &
-exec dunst &
-exec mpd &
-exec xwallpaper --zoom ~/.config/wallpaper/horizon.jpg &
-! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1 &
-exec dwmblocks &
+sxhkd &
+xrdb .config/x11/Xresources &
+numlockx &
+xcompmgr &
+unclutter -idle 3 &
+dunst &
+mpd &
+xwallpaper --zoom ~/.config/wallpaper/horizon.jpg &
+dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
+#! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1 &
+dwmblocks &
 exec dwm

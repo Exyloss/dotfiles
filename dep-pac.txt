@@ -54,3 +54,6 @@ ghostscript
 cups
 cups-runit
 system-config-printer
+exa
+keepassxc
+pipewire

@@ -20,7 +20,7 @@ static const char col_gray3[]         = "#bbbbbb";
 static const char col_gray4[]         = "#eeeeee";
 static const char col_cyan[]          = "#005577";
 static const char col_orange[]	 	  = "#FF8205";
-static const char col_magenta[]       = "#694bbb";
+static const char col_magenta[]       = "#371F79";
 static const unsigned int baralpha    = 0x90;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
@@ -102,7 +102,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
-	{ MODKEY,												XK_f,			 togglefullscr,	 {0} },
+	{ MODKEY,						XK_f,	   togglefullscr,  {0} },
 	//{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	//{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
 	//{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
@@ -123,7 +123,6 @@ static Key keys[] = {
 	{ MODKEY,	                	XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[13]} },
-	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
