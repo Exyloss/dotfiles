@@ -1,7 +1,5 @@
 alsa-utils
 alsa-utils-runit
-pulseaudio-alsa
-pulseaudio
 pamixer
 dunst
 libnotify
@@ -56,4 +54,7 @@ cups-runit
 system-config-printer
 exa
 keepassxc
-pipewire
+pulseaudio-alsa
+pcmanfm
+pulseaudio
+qutebrowser

@@ -23,6 +23,8 @@ Pause
 	mpc -q toggle
 Home
 	dpower
+Menu
+	cd ~/prog/xmenu && ./xmenu.sh
 super + shift + {p,n}
 	mpc -q {prev,next}
 XF86Audio{Prev,Next}

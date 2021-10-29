@@ -7,7 +7,6 @@ unclutter -idle 3 &
 dunst &
 mpd &
 xwallpaper --zoom ~/.config/wallpaper/horizon.jpg &
-dbus-launch --sh-syntax --exit-with-session; pulseaudio --kill; pipewire &
-#! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1 &
+! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1 &
 dwmblocks &
 exec dwm
