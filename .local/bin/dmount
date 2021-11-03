@@ -7,4 +7,4 @@ chosen=$(echo "$devices" | dmenu -l 10 -i -p "Monter quel disque ?") || exit 1
 dir=$(find ~ -type d -maxdepth 3 2>/dev/null)
 mountpoint=$(echo "$dir" | dmenu -l 10 -i -p "Écrivez votre point de montage.") || exit 1
 [ "$chosen" = "$android" ] && simple-mtpfs --device "$devnum" "$mountpoint" && notify-send "${android#*:} monté en $mountpoint" && exit 1
-[ "$chosen" != "$android" ] && sudo -A mount "$chosen" "$mountpoint" && notify-send "$chosen monté en $mountpoint." && exit 1
+[ "$chosen" != "$android" ] && sudo -A mount "$chosen" "$mountpoint" -o umask=000 && notify-send "$chosen monté en $mountpoint." && exit 1
