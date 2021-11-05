@@ -4,16 +4,6 @@ st.background: black
 
 !! Set a default font and font size as below:
 st.font: Monospace-11;
-URxvt*scrollBar:	    false
-URxvt.internalBorder: 10
-URxvt*font: xft:monospace:size=11
-URxvt*cursorBlink:    true
-URxvt.iso14755:		    true
-URxvt*utf8:			      true
-URxvt.keysym.C-equal:      resize-font:bigger
-URxvt.keysym.C-parenright: resize-font:smaller
-urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0000/c800
 
 ! st.termname: st-256color
 ! st.borderpx: 2
@@ -21,21 +11,59 @@ urxvt*background: rgba:0000/0000/0000/c800
 !! Set the background, foreground and cursor colors as below:
 
 !! gruvbox:
-*.color0: #1d2021
-*.color1: #cc241d
-*.color2: #98971a
-*.color3: #d79921
-*.color4: #458588
-*.color5: #b16286
-*.color6: #689d6a
-*.color7: #a89984
-*.color8: #928374
-*.color9: #fb4934
-*.color10: #b8bb26
-*.color11: #fabd2f
-*.color12: #83a598
-*.color13: #d3869b
-*.color14: #8ec07c
-*.color15: #ebdbb2
-*.foreground: white
-*.cursorColor: white
+! *.color0: #1d2021
+! *.color1: #cc241d
+! *.color2: #98971a
+! *.color3: #d79921
+! *.color4: #458588
+! *.color5: #b16286
+! *.color6: #689d6a
+! *.color7: #a89984
+! *.color8: #928374
+! *.color9: #fb4934
+! *.color10: #b8bb26
+! *.color11: #fabd2f
+! *.color12: #83a598
+! *.color13: #d3869b
+! *.color14: #8ec07c
+! *.color15: #ebdbb2
+! *.foreground: white
+! *.cursorColor: white
+
+!! spaceduck
+! special
+*.foreground:   #ecf0c1
+*.cursorColor:  #ecf0c1
+
+! black
+*.color0:       #000000
+*.color8:       #686f9a
+
+! red
+*.color1:       #e33400
+*.color9:       #e33400
+
+! green
+*.color2:       #5ccc96
+*.color10:      #5ccc96
+
+! magenta
+*.color5:       #b3a1e6
+*.color13:      #b3a1e6
+
+! blue
+*.color4:       #00a3cc
+*.color12:      #00a3cc
+
+! yellow
+*.color3:       #f2ce00
+*.color11:      #f2ce00
+
+! cyan
+*.color6:       #7a5ccc
+*.color14:      #7a5ccc
+
+! white
+*.color7:       #686f9a
+*.color15:      #f0f1ce
+

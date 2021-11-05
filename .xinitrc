@@ -6,6 +6,7 @@ xcompmgr &
 unclutter -idle 3 &
 dunst &
 mpd &
+transmission-daemon &
 xwallpaper --zoom ~/.config/wallpaper/horizon.jpg &
 ! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1 &
 dwmblocks &

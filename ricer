@@ -16,11 +16,12 @@ if [ "$choise" = "o" ]; then
 	cd ~ || exit
 	chsh -s /bin/zsh "$(whoami)"
 	sudo ln -sfT dash /usr/bin/sh
-        git clone https://github.com/lukesmithxyz/st
-        cd st || exit
-        sudo make clean install
+    git clone https://github.com/lukesmithxyz/st
+    cd st || exit
+    sudo make clean install
 	sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
-	exit 1
+    ln -s /etc/runit/sv/alsa /run/runit/service
+    ln -s /etc/runit/sv/cupsd /run/runit/service
+else
+    echo "Opération annulée."
 fi
-echo "Opération annulée."
-exit 1
