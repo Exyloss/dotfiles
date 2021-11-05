@@ -1,23 +1,23 @@
 #!/bin/sh
 # Ce script permet d'installer tous les scripts et fichiers de config
 printf "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. [o/N]"
-read choise
+read -r choise
 if [ "$choise" = "o" ]; then
 	sh dep-install
 	cp -r .config ~/
     cp -r .local ~/
 	cp .xinitrc .zshenv ~/
-	cd ~/.config/dmenu
+	cd ~/.config/dmenu || exit
 	sudo make clean install
-	cd ../dwm
+	cd ../dwm || exit
 	sudo make clean install
-	cd ../dwmblocks
+	cd ../dwmblocks || exit
 	sudo make clean install
-	cd
-	chsh -s /bin/zsh $(whoami)
+	cd ~ || exit
+	chsh -s /bin/zsh "$(whoami)"
 	sudo ln -sfT dash /usr/bin/sh
         git clone https://github.com/lukesmithxyz/st
-        cd st
+        cd st || exit
         sudo make clean install
 	sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
 	exit 1
