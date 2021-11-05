@@ -2,7 +2,7 @@ simple-mtpfs
 youtube-viewer-git
 lf-git
 libxft-bgra
-brave-bin
+librewolf-bin
 sc-im
 mkinitcpio-numlock
 epson-inkjet-printer-escpr2

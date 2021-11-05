@@ -5,7 +5,7 @@ read -r choise
 if [ "$choise" = "o" ]; then
 	sh dep-install
 	cp -r .config ~/
-    cp -r .local ~/
+    cp -r .local/ ~/
 	cp .xinitrc .zshenv ~/
 	cd ~/.config/dmenu || exit
 	sudo make clean install
@@ -13,6 +13,8 @@ if [ "$choise" = "o" ]; then
 	sudo make clean install
 	cd ../dwmblocks || exit
 	sudo make clean install
+    cd ../surf || exit
+    sudo make clean install
 	cd ~ || exit
 	chsh -s /bin/zsh "$(whoami)"
 	sudo ln -sfT dash /usr/bin/sh

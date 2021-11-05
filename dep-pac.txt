@@ -58,3 +58,5 @@ pulseaudio-alsa
 pcmanfm
 pulseaudio
 qutebrowser
+lib-config
+webkit2gtk
