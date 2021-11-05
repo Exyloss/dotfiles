@@ -3,25 +3,25 @@
 printf "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. [o/N]"
 read -r choise
 if [ "$choise" = "o" ]; then
-	sh dep-install
-	cp -r .config ~/
+    sh dep-install
+    cp -r .config ~/
     cp -r .local/ ~/
-	cp .xinitrc .zshenv ~/
-	cd ~/.config/dmenu || exit
-	sudo make clean install
-	cd ../dwm || exit
-	sudo make clean install
-	cd ../dwmblocks || exit
-	sudo make clean install
+    cp .xinitrc .zshenv ~/
+    cd ~/.config/dmenu || exit
+    sudo make clean install
+    cd ../dwm || exit
+    sudo make clean install
+    cd ../dwmblocks || exit
+    sudo make clean install
     cd ../surf || exit
     sudo make clean install
-	cd ~ || exit
-	chsh -s /bin/zsh "$(whoami)"
-	sudo ln -sfT dash /usr/bin/sh
+    cd ~ || exit
+    chsh -s /bin/zsh "$(whoami)"
+    sudo ln -sfT dash /usr/bin/sh
     git clone https://github.com/lukesmithxyz/st
     cd st || exit
     sudo make clean install
-	sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
+    sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
     ln -s /etc/runit/sv/alsa /run/runit/service
     ln -s /etc/runit/sv/cupsd /run/runit/service
 else
