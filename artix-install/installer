@@ -10,7 +10,7 @@ sudo pacman -S networkmanager networkmanager-runit grub efibootmgr awk
 #clavier
 echo "KEYMAP=fr" > /etc/vconsole.conf
 #langue
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
 #grub
 architect=$(lscpu | head -1 | awk '{print $2}')
 grub-install --target="$architect" /dev/sda
