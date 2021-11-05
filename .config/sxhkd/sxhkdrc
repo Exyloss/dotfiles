@@ -9,6 +9,8 @@ super + shift + u
 	dumount
 super + w
 	"$BROWSER"
+super + shift + k
+    keepread-dmenu
 super + n
 	"$TERMINAL" -t spterm -e ncmpcpp
 super + shift + l
@@ -24,7 +26,7 @@ Pause
 Home
 	dpower
 Menu
-	cd ~/prog/xmenu && ./xmenu.sh
+	cd ~/.config/xmenu && ./xmenu.sh
 super + shift + {p,n}
 	mpc -q {prev,next}
 XF86Audio{Prev,Next}

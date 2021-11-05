@@ -15,9 +15,11 @@ alias mkdir="mkdir -p"
 alias md="mkdir -p"
 alias m="mkdir -p"
 alias rm="rm -rf"
+alias cp="cp -r"
 alias ga="git add"
 alias gm="git commit"
 alias gpom="git push origin main"
+alias s="sxiv"
 
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot ; do
 	alias $command="sudo $command"
