@@ -12,12 +12,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
-"Plug 'morhetz/gruvbox'
 Plug 'rust-lang/rust.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/seoul256.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 set nocompatible
@@ -49,6 +48,7 @@ set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 set scrolloff=8
 set termguicolors
 set signcolumn=yes
+set path+=**
 
 " Thème de la barre
 let g:lightline = {}
@@ -71,6 +71,7 @@ ino [ []<left>
 ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
 autocmd BufRead,BufNewFile  *.py,*.rs,*.go,*.js,*.html,*.css,*.tex ino " ""<left>
+autocmd BufRead,BufNewFile  *.html,*.xml imap ,/ </<C-X><C-O>
 
 " Make adjusing split sizes a bit more friendly
 noremap <silent> <C-Right> :vertical resize +3<CR>
@@ -93,6 +94,10 @@ map <leader>c :w! \| !compiler "<c-r>%"<CR>
 
 " Ouvrir le terminal dans vim
 map <Leader>tt :vnew term://zsh<CR>
+
+" Raccourcis emmet
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
 
 " Gruvbox
 let g:gruvbox_transparent_bg = 1
