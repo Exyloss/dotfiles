@@ -56,7 +56,7 @@ c.url.start_pages = ['~/.config/qutebrowser/page.html']
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?kae=t&kk=-1&k1=-1&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kau=-1&kz=1&kl=wt-wt&kad=fr_FR&q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 're': 'https://www.reddit.com/r/{}', 'wiki': 'https://fr.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}'}
+c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?kae=t&kk=-1&k1=-1&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kau=-1&kz=1&kl=wt-wt&kad=fr_FR&q={}', 'aw': 'https://wiki.archlinux.org/?search={}', 're': 'https://www.reddit.com/r/{}', 'wiki': 'https://fr.wikipedia.org/wiki/{}', 'yt': 'https://www.youtube.com/results?search_query={}', 'ya': 'https://yandex.com/search/?text={}'}
 
 
 # Foreground color of the statusbar in insert mode.
