@@ -57,3 +57,4 @@ pulseaudio
 qutebrowser
 webkit2gtk
 qbittorrent
+gcr
