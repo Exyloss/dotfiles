@@ -22,8 +22,7 @@ if [ "$choise" = "o" ]; then
     cd st || exit
     sudo make clean install
     sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
-    ln -s /etc/runit/sv/alsa /run/runit/service
-    ln -s /etc/runit/sv/cupsd /run/runit/service
+    sudo systemctl enable cups.service
 else
     echo "Opération annulée."
 fi

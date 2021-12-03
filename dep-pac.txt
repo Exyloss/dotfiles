@@ -1,5 +1,4 @@
 alsa-utils
-alsa-utils-runit
 pamixer
 dunst
 libnotify
@@ -45,12 +44,10 @@ texlive-bin
 texlive-core
 pandoc
 transmission-cli
-transmission-runit
 zip
 unrar
 ghostscript
 cups
-cups-runit
 system-config-printer
 exa
 keepassxc
@@ -58,5 +55,6 @@ pulseaudio-alsa
 pcmanfm
 pulseaudio
 qutebrowser
-lib-config
 webkit2gtk
+qbittorrent
+gcr
