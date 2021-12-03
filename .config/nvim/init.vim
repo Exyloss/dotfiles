@@ -17,7 +17,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'cocopon/lightline-hybrid.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/seoul256.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 set nocompatible
@@ -49,6 +49,7 @@ set shiftwidth=4 tabstop=4 softtabstop=4 expandtab
 set scrolloff=8
 set termguicolors
 set signcolumn=yes
+set path+=**
 
 " Thème de la barre
 let g:lightline = {}
@@ -94,7 +95,11 @@ map <Leader>tt :vnew term://zsh<CR>
 
 " Gruvbox
 let g:gruvbox_transparent_bg = 1
-colorscheme gruvbox
+colorscheme soviet
+
+" Raccourcis emmet
+let g:user_emmet_mode='n'
+let g:user_emmet_leader_key=','
 
 " Spaceduck
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
