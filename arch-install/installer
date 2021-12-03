@@ -1,0 +1,27 @@
+#!/bin/sh
+cp sudoers /etc/
+cp locale.gen /etc/
+locale-gen
+#paquets à installer pour une installation basique
+sudo pacman -Syu
+sudo pacman -S networkmanager grub efibootmgr
+#clavier
+echo "KEYMAP=fr" > /etc/vconsole.conf
+#langue
+echo "LANG=fr_FR.UTF-8" > /etc/locale.conf
+#le réseau
+systemctl enable NetworkManager
+#horloge
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+#config mot de passe et nom d'utilisateur
+printf "mot de passe de root : "
+passwd
+set -f
+printf "nom de l'utilisateur à créer : "
+read ans
+useradd -mg wheel "$ans"
+printf "mot de passe de %s : \n" "$ans"
+passwd "$ans"
+printf "script terminé.\n"
+printf "Installer grub : \ngrub-install --target=... /dev/sda\ngrub-mkconfig -o /boot/grub/grub.cfg\n"
+
