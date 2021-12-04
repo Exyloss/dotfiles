@@ -23,7 +23,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 import:
-  - ~/.config/alacritty/spaceduck.yml
+  - ~/.config/alacritty/soviet3.yml
 
 env:
   TERM: alacritty

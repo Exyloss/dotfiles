@@ -58,3 +58,7 @@ qutebrowser
 webkit2gtk
 qbittorrent
 gcr
+ttc-iosevka
+ttf-fira-code
+ttf-fira-mono
+ttf-fira-sans

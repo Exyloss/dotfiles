@@ -6,3 +6,4 @@ librewolf-bin
 sc-im
 mkinitcpio-numlock
 epson-inkjet-printer-escpr2
+nerd-fonts-mononoki

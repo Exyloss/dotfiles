@@ -1,0 +1,38 @@
+# thème soviet, inspiré par falcon
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#b4b4b9'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#020221'
+    cursor: '#ffe8c0'
+
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#D63152'
+    green:   '#5A8552'
+    yellow:  '#e8a90c'
+    blue:    '#42759c'
+    cyan:    '#886594'
+    magenta: '#e96108'
+    white:   '#E3E3E1'
+
+  # Bright colors
+  bright:
+    black:   '#445059'
+    red:     '#E74263'
+    green:   '#6B9663'
+    yellow:  '#F9BA1C'
+    blue:    '#5386AD'
+    cyan:    '#9976A5'
+    magenta: '#FA7219'
+    white:   '#F4F4F2'
+
+# Use custom cursor colors. If true, display the cursor in the cursor.foreground
+# and cursor.background colors, otherwise invert the colors of the cursor.
+custom_cursor_colors: true
+
