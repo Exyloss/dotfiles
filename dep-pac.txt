@@ -63,3 +63,5 @@ ttf-fira-code
 ttf-fira-mono
 ttf-fira-sans
 rclone
+gnu-netcat
+inetutils
