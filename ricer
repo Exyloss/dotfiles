@@ -21,7 +21,7 @@ if [ "$choise" = "o" ]; then
     git clone https://github.com/lukesmithxyz/st
     cd st || exit
     sudo make clean install
-    sudo git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
+    sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
     sudo systemctl enable cups.service
 else
     echo "Opération annulée."

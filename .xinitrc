@@ -8,6 +8,10 @@ dunst &
 mpd &
 transmission-daemon &
 xwallpaper --zoom ~/.config/wallpaper/horizon.jpg &
-! pidof -s pulseaudio >/dev/null 2>&1 && setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1 &
 dwmblocks &
+kwalletd5 &
+/usr/lib/kdeconnectd &
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
 exec dwm
