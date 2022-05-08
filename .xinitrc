@@ -2,7 +2,8 @@ setxkbmap fr ;
 sxhkd &
 xrdb .config/x11/Xresources &
 numlockx &
-xcompmgr &
+#xcompmgr &
+picom --experimental-backends &
 unclutter -idle 3 &
 dunst &
 mpd &

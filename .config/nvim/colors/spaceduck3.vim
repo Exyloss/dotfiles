@@ -52,7 +52,7 @@ hi link StatusLineNC StatusLineTermNC
 hi TabLine guifg=#000000 ctermfg=0 ctermbg=102 gui=NONE cterm=NONE
 hi TabLineFill guifg=#818596 ctermfg=102 ctermbg=0 gui=NONE cterm=NONE
 hi TabLineSel guifg=#c1c3cc ctermfg=251 ctermbg=233 gui=NONE cterm=NONE
-hi Visual guifg=NONE ctermfg=NONE ctermbg=234 gui=NONE cterm=NONE
+hi Visual guifg=NONE guibg=#30365F ctermfg=NONE gui=NONE cterm=NONE
 hi link VisualNOS Visual
 hi WarningMsg guifg=#e39400 ctermfg=172 ctermbg=233 gui=NONE cterm=NONE
 hi WildMenu guifg=#000000 ctermfg=0 ctermbg=251 gui=NONE cterm=NONE
@@ -102,10 +102,6 @@ hi link cCppOutIf2 Normal
 hi link cBracket Title
 hi link cssBraces Normal
 hi cssSelectorOp guifg=#ce6f8f ctermfg=168 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
-hi link fortranType Tag
-hi link fortranStructure Structure
-hi link fortranStorageClass StorageClass
-hi link fortranUnitHeader Title
 hi link haskellType Tag
 hi link haskellIdentifier Label
 hi link haskellKeyword Boolean

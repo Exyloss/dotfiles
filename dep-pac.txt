@@ -65,3 +65,4 @@ ttf-fira-sans
 rclone
 gnu-netcat
 inetutils
+picom

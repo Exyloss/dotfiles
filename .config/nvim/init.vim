@@ -12,12 +12,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'preservim/nerdtree'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
-"Plug 'morhetz/gruvbox'
-Plug 'rust-lang/rust.vim'
 Plug 'cocopon/lightline-hybrid.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
+Plug 'pineapplegiant/spaceduck'
 call plug#end()
 
 set nocompatible
@@ -65,19 +63,12 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-ino << «»<left>
-ino ( ()<left>
-ino [ []<left>
-ino {<CR> {<CR>}<ESC>O
-autocmd BufRead,BufNewFile  *.py,*.rs,*.go,*.js,*.html,*.css ino " ""<left>
-
 " Make adjusing split sizes a bit more friendly
 noremap <silent> <C-Right> :vertical resize +3<CR>
 noremap <silent> <C-Left> :vertical resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <leader>f :Files <CR>
@@ -93,9 +84,8 @@ map <leader>c :w! \| !compiler "<c-r>%"<CR>
 " Ouvrir le terminal dans vim
 map <Leader>tt :vnew term://zsh<CR>
 
-" Gruvbox
 let g:gruvbox_transparent_bg = 1
-colorscheme soviet
+" colorscheme soviet
 
 " Raccourcis emmet
 let g:user_emmet_mode='n'
@@ -104,14 +94,7 @@ let g:user_emmet_leader_key=','
 " Spaceduck
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-" colorscheme spaceduck3
-
-" JellyBeans
-let g:jellybeans_overrides = {
-\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
-\}
-let g:jellybeans_overrides['background']['guibg'] = 'none'
-" colorscheme jellybeans2
+colorscheme spaceduck3
 
 autocmd VimEnter * hi Normal ctermbg=none
 " Template de page html vide
