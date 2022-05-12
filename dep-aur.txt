@@ -7,3 +7,4 @@ sc-im
 mkinitcpio-numlock
 epson-inkjet-printer-escpr2
 ttf-mononoki
+mpdris2
