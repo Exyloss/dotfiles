@@ -23,5 +23,6 @@ useradd -mg wheel "$ans"
 printf "mot de passe de %s : \n" "$ans"
 passwd "$ans"
 printf "script terminé.\n"
+lscpu | grep "Arch"
 printf "Installer grub : \ngrub-install --target=... /dev/sda\ngrub-mkconfig -o /boot/grub/grub.cfg\n"
 
