@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Lecteur d'images
+Exec=/usr/bin/sxiv -a %f

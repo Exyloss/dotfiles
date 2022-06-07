@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Lecteur de PDF
+Exec=/usr/bin/zathura %u

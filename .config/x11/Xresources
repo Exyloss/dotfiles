@@ -1,9 +1,11 @@
 !! Transparency (0-1):
 st.alpha: 0.8
 st.background: black
+st.font: Monospace-11
 
-!! Set a default font and font size as below:
-st.font: Monospace-11;
+Sxiv.background: black
+Sxiv.font: Monospace-10
+Nsxiv.window.alpha: 0.8
 
 ! st.termname: st-256color
 ! st.borderpx: 2

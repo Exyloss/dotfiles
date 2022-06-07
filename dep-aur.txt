@@ -10,3 +10,4 @@ mpdris2
 epson-inkjet-printer-201112w
 wmname
 stpv-git
+xdg-ninja
