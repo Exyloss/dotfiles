@@ -67,3 +67,5 @@ gnu-netcat
 inetutils
 picom
 playerctl
+shellcheck
+kotlin
