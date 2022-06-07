@@ -3,8 +3,8 @@ youtube-viewer-git
 lf-git
 libxft-bgra
 librewolf-bin
-sc-im
 mkinitcpio-numlock
 epson-inkjet-printer-escpr2
 ttf-mononoki
 mpdris2
+epson-inkjet-printer-201112w
