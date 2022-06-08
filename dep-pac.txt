@@ -69,3 +69,4 @@ picom
 playerctl
 shellcheck
 kotlin
+ueberzug

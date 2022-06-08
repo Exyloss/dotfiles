@@ -16,17 +16,13 @@ super + n
 super + shift + l
 	slock
 super + e
-	"$TERMINAL" -t spterm -e lf
+	"$TERMINAL" -t spterm -e lfrun
 super + Return
 	"$TERMINAL"
 Print
 	"$TERMINAL" -e fzopen
 Pause
 	mpc -q toggle
-Home
-	dpower
-Menu
-	cd ~/.config/xmenu && ./xmenu.sh
 super + shift + {p,n}
 	mpc -q {prev,next}
 XF86Audio{Prev,Next}
