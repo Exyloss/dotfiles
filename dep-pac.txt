@@ -28,6 +28,7 @@ mpd
 alacritty
 sxhkd
 fzf
+fzy
 exfat-utils
 zathura
 zathura-pdf-mupdf
