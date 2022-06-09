@@ -2,7 +2,6 @@ alsa-utils
 pamixer
 dunst
 libnotify
-xcompmgr
 xwallpaper
 xorg
 xorg-xinit
@@ -12,7 +11,6 @@ numlockx
 slock
 mpv
 youtube-dl
-croc
 bc
 unzip
 mpc
@@ -24,14 +22,12 @@ breeze-gtk
 papirus-icon-theme
 xclip
 xsel
-dosfstools
 unclutter
 xwallpaper
 mpd
 alacritty
 sxhkd
 fzf
-fzy
 exfat-utils
 zathura
 zathura-pdf-mupdf
@@ -52,16 +48,11 @@ system-config-printer
 exa
 keepassxc
 pulseaudio-alsa
-pcmanfm
 pulseaudio
 qutebrowser
 webkit2gtk
 qbittorrent
-gcr
 ttc-iosevka
-ttf-fira-code
-ttf-fira-mono
-ttf-fira-sans
 rclone
 gnu-netcat
 inetutils
@@ -70,3 +61,7 @@ playerctl
 shellcheck
 kotlin
 ueberzug
+choose
+zoxide
+openvpn
+wget

@@ -1,4 +1,0 @@
-#!/bin/sh
-device=$(kdeconnect-cli -l 2>/dev/null | head -1 | awk '{print $3}') || exit 1
-echo "$device"
-kdeconnect-cli -d "$device" && printf "Appareil connecté.\n" && exit 0

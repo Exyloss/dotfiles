@@ -1,13 +1,11 @@
 simple-mtpfs
-youtube-viewer-git
 lf-git
 libxft-bgra
 librewolf-bin
-mkinitcpio-numlock
 epson-inkjet-printer-escpr2
 ttf-mononoki
 mpdris2
 epson-inkjet-printer-201112w
 wmname
 stpv-git
-xdg-ninja
+xdg-ninja-git
