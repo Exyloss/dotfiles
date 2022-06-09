@@ -1,14 +1,12 @@
 #!/bin/sh
 
-file=$(find ~ -type f ! -path "*/.cache/*"| fzy)
-ext=$(echo "$file" | awk -F "/" '{print $NF}' | awk -F "." '{print $NF}')
-echo "$ext"
+file=$(find ~ -type f ! -path "*/.cache/*" ! -path "*/.librewolf/*" ! -path "*/.local/state/*" ! -path "*/.local/share/*" ! -path "*/.git/*"| fzy) || exit 1
+ext="${file##*.}"
 case $ext in
-	"pdf"|"epub")  zathura "$file" ;;
+	"pdf"|"epub"|"djvu") zathura "$file" ;;
 	"jpg"|"png"|"svg"|"gif") sxiv "$file" ;;
-	"mp4")  mpv "$file" ;;
-	"bz2"|"tbz2"|"tgz"|"zst"|"lzma"|"bz2"|"rar"|"gz"|"tar"|"zip"|"Z"|"7z"|"xz"|"exe") ext "$file" ;;
-	*)  nvim "$file";;
+	"mp4"|"mkv"|"avi"|"mp3") mpv "$file" ;;
+	*) "$EDITOR" "$file";;
 
 esac
 		
