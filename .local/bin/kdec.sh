@@ -1,6 +1,6 @@
 #!/bin/sh
 case "$1" in
-    "-l") kdeconnect-cli -a --id-name-only;;
+    "-l") kdeconnect-cli -a ;;
     "-f")
         [ -e "$2" ] || exit 1
         devices=$(kdeconnect-cli -a --id-name-only) || exit 1
@@ -35,7 +35,9 @@ case "$1" in
         devices=$(kdeconnect-cli -a --id-name-only) || exit 1
         device=$(echo "$devices" | fzf -1 | awk '{print $1}') || exit 1
         kdeconnect-cli -d "$device" --share-text "$content" || exit 1 ;;
-        
+    "-r")
+        kdeconnect-cli --refresh
+        kdeconnect-cli -a ;;
     *) 
         printf "==== Utilisation ====\n"
         printf "kdec.sh [commande] [argument]\n"
@@ -44,5 +46,6 @@ case "$1" in
         printf "* -h : afficher cette aide\n"
         printf "* -f : envoyer le fichier renseigné en argument\n"
         printf "* -s : envoyer un SMS\n"
-        printf "* -t : envoyer le texte renseigné en argument\n" ;;
+        printf "* -t : envoyer le texte renseigné en argument\n"
+        printf "* -r : rafraîchir la liste des périphériques disponibles\n" ;;
 esac
