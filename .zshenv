@@ -10,6 +10,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export TERM="xterm-256color"
 export LC_MESSAGES="fr_FR.utf-8"
 export LANG="fr_FR.utf-8"
+export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export SUDO_ASKPASS="$HOME/.local/bin/dpass"
 export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
 export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
