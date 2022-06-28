@@ -3,7 +3,7 @@
 printf "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. [o/N]"
 read -r choise
 if [ "$choise" = "o" ]; then
-    sh dep-install
+    sh dep-install || exit 1
     cp -r .config ~/
     cp -r .local/ ~/
     cp .xinitrc .zshenv ~/
