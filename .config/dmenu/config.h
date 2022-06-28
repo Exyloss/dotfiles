@@ -10,15 +10,16 @@ static int min_width = 500;                    /* minimum width when centered */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {"monospace:size=10", "JoyPixels:pixelsize=8:antialias=true:autohint=true"};
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
-// cyan = "#005577"
-// magenta = "#371F79"
+static const char col_orange[]	 	  = "#933000";
+static const char col_cyan[]	 	  = "#005577";
+static const char col_magenta[]	 	  = "#371F79";
 static const char *colors[SchemeLast][2] = {
-	/*     fg         bg       */
-	[SchemeNorm] = { "#bbbbbb", "#000000" },
-	[SchemeSel] = { "#eeeeee", "#371F79" },
-	[SchemeSelHighlight] = { "#ffc978", "#371F79" },
+	                        /*     fg         bg       */
+	[SchemeNorm] =          { "#bbbbbb", "#000000" },
+	[SchemeSel] =           { "#eeeeee", col_orange },
+	[SchemeSelHighlight] =  { "#ffc978", col_orange },
 	[SchemeNormHighlight] = { "#ffc978", "#000000" },
-	[SchemeOut] = { "#000000", "#00ffff" },
+	[SchemeOut] =           { "#000000", "#00ffff" },
 };
 
 static const unsigned int alphas[SchemeLast][2] = {

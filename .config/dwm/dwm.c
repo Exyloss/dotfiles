@@ -253,6 +253,8 @@ static void zoom(const Arg *arg);
 
 static pid_t getparentprocess(pid_t p);
 static int isdescprocess(pid_t p, pid_t c);
+static int istmuxserver(pid_t p);
+static long gettmuxclientpid(long shellpid);
 static Client *swallowingclient(Window w);
 static Client *termforwin(const Client *c);
 static pid_t winpid(Window w);
@@ -2231,11 +2233,46 @@ getparentprocess(pid_t p)
 int
 isdescprocess(pid_t p, pid_t c)
 {
-	while (p != c && c != 0)
-		c = getparentprocess(c);
-
+	pid_t p_tmp;
+	while (p != c && c != 0) {
+		p_tmp = getparentprocess(c);
+		if (istmuxserver(p_tmp))
+			c = gettmuxclientpid(c);
+		else
+			c = p_tmp;
+	}
 	return (int)c;
 }
+
+
+int
+istmuxserver(pid_t p)
+{
+	char path[256];
+	char name[15];
+	FILE* stat;
+
+	snprintf(path, sizeof(path) - 1, "/proc/%u/stat", (unsigned)p);
+	if (!(stat = fopen(path, "r")))
+		return 0;
+	fscanf(stat, "%*u (%12[^)])", name);
+	fclose(stat);
+	return (strcmp(name, "tmux: server") == 0);
+}
+
+long
+gettmuxclientpid(long shellpid)
+{
+	long volatile panepid, clientpid;
+	FILE* list = popen("tmux list-clients -F '#{pane_pid} #{client_pid}'", "r");
+	if (!list)
+		return 0;
+	while (!feof(list) && panepid != shellpid)
+		fscanf(list, "%ld %ld\n", &panepid, &clientpid);
+	pclose(list);
+	return clientpid;
+}
+
 
 Client *
 termforwin(const Client *w)

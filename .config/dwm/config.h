@@ -19,14 +19,14 @@ static const char col_gray2[]         = "#444444";
 static const char col_gray3[]         = "#bbbbbb";
 static const char col_gray4[]         = "#eeeeee";
 static const char col_cyan[]          = "#005577";
-static const char col_orange[]	 	  = "#FF8205";
+static const char col_orange[]	 	  = "#933000";
 static const char col_magenta[]       = "#371F79";
 static const unsigned int baralpha    = 0x90;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_magenta,  col_orange  },
+	[SchemeSel]  = { col_gray4, col_orange,  col_magenta  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
@@ -46,6 +46,7 @@ static const Rule rules[] = {
 	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
 	{ TERMCLASS, NULL,     NULL,           0,         0,          1,           0,        -1 },
+	{ "Tmux",    NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,      NULL,     "spterm",       0,         1,          1,           1,        -1 }, /* Si la fenêtre s'apelle "spterm", elle apparait en mode flottant */
 };
@@ -95,29 +96,14 @@ static Key keys[] = {
 	//{ MODKEY,                       XK_a,      spawn,          {.v = dmenucmd } },
 	//{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_o,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_y,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,						XK_f,	   togglefullscr,  {0} },
-	//{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
-	//{ MODKEY|Mod4Mask,              XK_i,      incrigaps,      {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_i,      incrigaps,      {.i = -1 } },
-	//{ MODKEY|Mod4Mask,              XK_o,      incrogaps,      {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_o,      incrogaps,      {.i = -1 } },
-	//{ MODKEY|Mod4Mask,              XK_6,      incrihgaps,     {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_6,      incrihgaps,     {.i = -1 } },
-	//{ MODKEY|Mod4Mask,              XK_7,      incrivgaps,     {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_7,      incrivgaps,     {.i = -1 } },
-	//{ MODKEY|Mod4Mask,              XK_8,      incrohgaps,     {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_8,      incrohgaps,     {.i = -1 } },
-	//{ MODKEY|Mod4Mask,              XK_9,      incrovgaps,     {.i = +1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_9,      incrovgaps,     {.i = -1 } },
-	//{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY|ShiftMask,             XK_agrave, togglegaps,     {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,	                	XK_q,      killclient,     {0} },
