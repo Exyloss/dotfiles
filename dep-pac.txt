@@ -66,3 +66,5 @@ choose
 zoxide
 openvpn
 wget
+sof-firmware
+gcr
