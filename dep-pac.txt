@@ -68,3 +68,4 @@ openvpn
 wget
 sof-firmware
 gcr
+nicotine+

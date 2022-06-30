@@ -3,6 +3,10 @@ super + shift + e
 	dpower
 super + a
 	dmenu_run
+super + shift + g
+    warpd --hint
+super + g
+    warpd --grid
 super + shift + m
 	dmount
 super + shift + u
@@ -23,18 +27,22 @@ Print
 	"$TERMINAL" -e fzopen
 Pause
 	mpc -q toggle
-super + shift + {p,n}
-	mpc -q {prev,next}
+Home
+	dpower
+Menu
+	cd ~/.config/xmenu && ./xmenu.sh
 XF86Audio{Prev,Next}
-	playerctl {previous,next}
+	playerctl -a {previous,next}
 XF86AudioPlay
 	playerctl -a play-pause
+super + shift + p
+    dmenu-pctl play-pause
 XF86AudioMute
 	pamixer -t; kill -45 $(pidof dwmblocks)
 XF86Audio{Raise,Lower}Volume
 	pamixer -{i,d} 2; kill -45 $(pidof dwmblocks)
 XF86AudioStop
-	mpc clear
+    dmenu-pctl stop
 XF86MonBrightness{Down,Up}
 	xbacklight -{dec,inc} 10
 super + Escape
