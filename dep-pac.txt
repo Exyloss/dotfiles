@@ -69,3 +69,4 @@ wget
 sof-firmware
 gcr
 nicotine+
+tlp

@@ -27,10 +27,6 @@ Print
 	"$TERMINAL" -e fzopen
 Pause
 	mpc -q toggle
-Home
-	dpower
-Menu
-	cd ~/.config/xmenu && ./xmenu.sh
 XF86Audio{Prev,Next}
 	playerctl -a {previous,next}
 XF86AudioPlay
@@ -38,9 +34,9 @@ XF86AudioPlay
 super + shift + p
     dmenu-pctl play-pause
 XF86AudioMute
-	pamixer -t; kill -45 $(pidof dwmblocks)
+	pamixer -t; kill -44 $(pidof dwmblocks)
 XF86Audio{Raise,Lower}Volume
-	pamixer -{i,d} 2; kill -45 $(pidof dwmblocks)
+	pamixer -{i,d} 2; kill -44 $(pidof dwmblocks)
 XF86AudioStop
     dmenu-pctl stop
 XF86MonBrightness{Down,Up}
