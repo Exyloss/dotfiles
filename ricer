@@ -6,6 +6,8 @@ if [ "$choise" = "o" ]; then
     sh dep-install || exit 1
     cp -r .config ~/
     cp -r .local/ ~/
+    sudo cp -r etc /etc
+    sudo cp -r usr/share /usr/share
     cp .xinitrc .zshenv ~/
     cd ~/.config/dmenu || exit
     sudo make clean install

@@ -70,3 +70,5 @@ sof-firmware
 gcr
 nicotine+
 tlp
+lightdm
+lightdm-gtk-greeter
