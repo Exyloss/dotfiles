@@ -12,7 +12,7 @@ unclutter -idle 3 &
 dunst &
 mpd &
 playerctl &
-mpDris2 &
+mpd-mpris &
 transmission-daemon &
 exec dwmblocks &
 kwalletd5 &

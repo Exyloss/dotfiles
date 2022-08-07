@@ -4,7 +4,7 @@ libxft-bgra
 librewolf-bin
 epson-inkjet-printer-escpr2
 ttf-mononoki
-mpdris2
+mpd-mpris
 epson-inkjet-printer-201112w
 wmname
 stpv-git
