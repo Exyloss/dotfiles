@@ -72,3 +72,4 @@ nicotine+
 tlp
 lightdm
 lightdm-gtk-greeter
+qalculate-gtk
