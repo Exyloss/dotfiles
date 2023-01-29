@@ -48,8 +48,6 @@ cups
 system-config-printer
 exa
 keepassxc
-pulseaudio-alsa
-pulseaudio
 qutebrowser
 webkit2gtk
 qbittorrent
