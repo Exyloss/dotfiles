@@ -60,8 +60,6 @@ inetutils
 picom
 playerctl
 shellcheck
-kotlin
-ueberzug
 choose
 zoxide
 openvpn
