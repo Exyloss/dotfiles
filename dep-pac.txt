@@ -18,7 +18,6 @@ noto-fonts
 noto-fonts-emoji
 ncmpcpp
 lxappearance
-breeze-gtk
 papirus-icon-theme
 xclip
 xsel
@@ -35,7 +34,6 @@ zathura-pdf-mupdf
 sxiv
 htop
 acpi
-lua
 starship
 texlive-bin
 texlive-core
@@ -43,7 +41,6 @@ pandoc
 transmission-cli
 zip
 unrar
-ghostscript
 cups
 system-config-printer
 exa
