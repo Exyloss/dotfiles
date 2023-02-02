@@ -8,20 +8,23 @@ SAVEHIST=10000000
 HISTFILE=~/.cache/zsh/history
 
 # Basic auto/tab complete:
-autoload -U compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 zmodload zsh/complist
-compinit
+
+if [[ -N ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
-bindkey -s '^f' 'se\n'
-bindkey -s '^r' 'source ~/.config/zsh/.zshrc\n'
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -71,5 +74,7 @@ bindkey '^e' edit-command-line
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(mcfly init zsh)"
 
 source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
