@@ -4,7 +4,7 @@ n=$(echo "$players" | wc -l)
 case "$n" in
     "0") echo "Aucun lecteur trouvé."
          exit 0 ;;
-    "1") payerctl -a "$1" ;;
+    "1") playerctl -a "$1" ;;
     *)   choise=$(echo "$players" | dmenu -l 10 -p "lecteur") || exit 1
          playerctl -p "$choise" "$1" || exit 1 ;;
 esac
