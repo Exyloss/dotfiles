@@ -1,7 +1,6 @@
 add_newline=false
 
 format = """
-$cmd_duration
 $directory$git_branch$git_commit$character"""
 
 [character]
