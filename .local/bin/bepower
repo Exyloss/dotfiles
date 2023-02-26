@@ -1,0 +1,9 @@
+#!/bin/sh
+
+pgrep -x bemenu && exit
+
+chosen=$(printf "Verrouiller\nRedémarrer\nÉteindre" | bemenu --sf '#C66000' -l 10 --tf '#C66000' --nb '#000000CC' --ab '#000000CC' --fb '#000000CC' --hb '#000000CC' --hf '#C66000' --cw 1 -H 15)
+[ "$chosen" = "" ] && exit 1
+[ "$chosen" = Éteindre ] && poweroff
+[ "$chosen" = Redémarrer ] && reboot
+[ "$chosen" = Verrouiller ] && swaylock -l -c '#000000'

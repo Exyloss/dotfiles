@@ -65,3 +65,6 @@ nicotine+
 tlp
 qalculate-gtk
 mcfly
+bemenu
+sway
+i3blocks
