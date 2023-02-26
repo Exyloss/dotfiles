@@ -251,9 +251,9 @@ bindsym $mod+n exec alacritty --class float -e ncmpcpp
 bindsym $mod+c exec qalculate-gtk
 bindsym $mod+shift+e exec bepower
 
-bindsym XF86AudioLowerVolume exec pamixer -d 5 && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioRaiseVolume exec pamixer -i 5 && pkill -SIGRTMIN+10 i3blocks
-bindsym XF86AudioMute exec pamixer -t && pkill -SIGRTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec pamixer -d 5 && kill -44 $(pidof i3blocks)
+bindsym XF86AudioRaiseVolume exec pamixer -i 5 && kill -44 $(pidof i3blocks)
+bindsym XF86AudioMute exec pamixer -t && kill -44 $(pidof i3blocks)
 
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
@@ -264,6 +264,7 @@ for_window [app_id="qalculate-gtk"] floating enable
 
 xwayland disable
 
+exec_always mpd
 exec_always sb-mpdup
 exec_always mpDris2
 

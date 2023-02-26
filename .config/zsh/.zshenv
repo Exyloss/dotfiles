@@ -127,4 +127,6 @@ ex=🎯:\
 [ -f ~/.config/zsh/.zshrc ] && . ~/.config/zsh/.zshrc
 
 #start graphical server if dwm not already running
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+#[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx "$XINITRC"
+#start sway if it is not already running
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec sway
