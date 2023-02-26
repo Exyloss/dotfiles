@@ -258,11 +258,16 @@ bindsym XF86AudioMute exec pamixer -t && kill -44 $(pidof i3blocks)
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 
+bindsym $mod+shift+n exec playerctl -a next
+bindsym $mod+shift+p exec playerctl -a previous
+bindsym $mod+shift+plus exec playerctl -a play-pause
+
 
 for_window [app_id="float"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
+for_window [class="PacketTracer"] floating enable
 
-xwayland disable
+#xwayland disable
 
 exec_always mpd
 exec_always sb-mpdup
