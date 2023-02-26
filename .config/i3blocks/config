@@ -1,0 +1,27 @@
+separator=true
+
+[music]
+command=sb-music
+interval=5
+signal=11
+
+[volume]
+command=sb-volume
+interval=5
+signal=10
+
+[ram]
+command=sb-mem
+interval=5
+
+[battery]
+command=sb-bat
+interval=10
+
+[day]
+command=date '+%a %d %b'
+interval=120
+
+[hour]
+command=date '+%H:%M'
+interval=30
