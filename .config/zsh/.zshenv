@@ -9,6 +9,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export TERM="xterm-256color"
+export LC_MESSAGES="fr_FR.UTF-8"
 export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 export SUDO_ASKPASS="$HOME/.local/bin/dpass"
 export JAVA_HOME="/usr/lib/jvm/java-18-openjdk"
