@@ -1,5 +1,9 @@
 separator=true
 
+[title]
+command=cur_window.sh
+interval=persist
+
 [music]
 command=sb-music
 interval=5
