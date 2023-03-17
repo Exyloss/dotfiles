@@ -20,6 +20,7 @@ Plug 'pineapplegiant/spaceduck'
 Plug 'chrisbra/csv.vim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'gregsexton/MatchTag'
+Plug 'momota/cisco.vim'
 " Plug 'dense-analysis/ale'
 call plug#end()
 

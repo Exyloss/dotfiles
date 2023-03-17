@@ -68,7 +68,7 @@ hi PreProc guifg=#b3a1e6 ctermfg=146 ctermbg=NONE gui=NONE cterm=NONE
 hi Type guifg=#ce6f8f ctermfg=168 ctermbg=NONE gui=NONE cterm=NONE
 hi Special guifg=#b3a1e6 ctermfg=146 ctermbg=NONE gui=NONE cterm=NONE
 hi Underlined guifg=#5ccc96 ctermfg=78 ctermbg=NONE gui=underline cterm=underline
-hi Error guifg=#e33400 ctermfg=166 ctermbg=NONE gui=NONE cterm=NONE
+hi Error guifg=#e33400 ctermfg=166 ctermbg=NONE gui=NONE cterm=NONE guibg=NONE
 hi Ignore guifg=#e33400 ctermfg=166 ctermbg=NONE gui=NONE cterm=NONE
 hi Delimiter guifg=#ecf0c1 ctermfg=255 ctermbg=NONE gui=NONE cterm=NONE
 hi Operator guifg=#ce6f8f ctermfg=168 ctermbg=NONE gui=NONE cterm=NONE
