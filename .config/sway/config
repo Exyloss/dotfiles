@@ -148,9 +148,10 @@ output * bg /home/antonin/.config/wallpaper/night.png fill
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+tab layout tabbed
-    bindsym $mod+e layout toggle split
+    #bindsym $mod+s layout stacking
+    bindsym $mod+s layout toggle tabbed split
+    #bindsym $mod+tab layout tabbed
+    #bindsym $mod+shift+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -183,10 +184,10 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym h resize shrink width 20px
+    bindsym l resize shrink width 20px
     bindsym k resize grow height 20px
     bindsym j resize shrink height 20px
-    bindsym l resize grow width 20px
+    bindsym h resize grow width 20px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 20px
@@ -250,6 +251,8 @@ bindsym $mod+w exec $browser
 bindsym $mod+n exec alacritty --class float -e ncmpcpp
 bindsym $mod+c exec qalculate-gtk
 bindsym $mod+shift+e exec bepower
+bindsym $mod+e exec alacritty --class float -e lf
+bindsym $mod+shift+b exec bl.sh
 
 bindsym XF86AudioLowerVolume exec pamixer -d 5 && kill -44 $(pidof i3blocks)
 bindsym XF86AudioRaiseVolume exec pamixer -i 5 && kill -44 $(pidof i3blocks)
@@ -266,11 +269,13 @@ bindsym $mod+shift+plus exec playerctl -a play-pause
 for_window [app_id="float"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [class="PacketTracer"] floating enable
+#for_window [app_id="org.pwmt.zathura"] floating enable, size set 600 700
 
 #xwayland disable
 
 exec_always mpd
-exec_always sb-mpdup
+exec_always sb-mpdup 2>/dev/null 
 exec_always mpDris2
+exec_always gammastep -l 43.8:-0.5 -t 5000:4000
 
 include /etc/sway/config.d/*
