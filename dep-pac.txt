@@ -69,3 +69,4 @@ sway
 i3blocks
 gnome-keyring
 hplip
+gammastep
