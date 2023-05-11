@@ -25,6 +25,7 @@ if [ "$choise" = "o" ]; then
     sudo make clean install
     sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
     sudo systemctl enable cups.service
+    systemctl --user enable --now gnome-keyring
 else
     echo "Opération annulée."
 fi

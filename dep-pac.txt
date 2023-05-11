@@ -46,7 +46,6 @@ system-config-printer
 exa
 keepassxc
 qutebrowser
-webkit2gtk
 qbittorrent
 ttc-iosevka
 rclone
@@ -68,3 +67,5 @@ mcfly
 bemenu
 sway
 i3blocks
+gnome-keyring
+hplip
