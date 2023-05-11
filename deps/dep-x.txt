@@ -1,0 +1,11 @@
+xwallpaper
+xorg
+xorg-xinit
+sxhkd
+xclip
+xsel
+unclutter
+xwallpaper
+numlockx
+slock
+picom

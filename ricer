@@ -8,7 +8,7 @@ if [ "$choise" = "o" ]; then
     cp -r .local/ ~/
     sudo cp -r etc /etc
     sudo cp -r usr/share /usr/share
-    cp .xinitrc .zshenv ~/
+    cp .zshenv ~/
     cd ~/.config/dmenu || exit
     sudo make clean install
     cd ../dwm || exit

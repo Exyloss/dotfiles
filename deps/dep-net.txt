@@ -1,0 +1,9 @@
+tcpdump
+wireshark
+gnu-netcat
+inetutils
+wget
+curl
+aria2
+httpie
+openvpn
