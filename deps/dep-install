@@ -1,0 +1,24 @@
+#!/bin/sh
+
+confirm_prompt() {
+    printf "Installer les dépendances %s ? [o/N] " "$1"
+    set -f
+    read ans
+    case "$ans" in
+        "o"|"O"|"Y"|"y"|"") return 0 ;;
+        *) return 1 ;;
+    esac
+
+}
+
+#sudo pacman --noconfirm -Sy archlinux-keyring
+confirm_prompt "AUR" && yay --noconfirm -S - < dep-aur.txt
+
+
+files="dep-pac.txt dep-net.txt dep-x.txt"
+
+for i in $files
+do
+    name=$(echo "$i" | cut -d '-' -f 2 | cut -d '.' -f 1)
+    confirm_prompt "$name" && sudo pacman --noconfirm -S - < "$i"
+done

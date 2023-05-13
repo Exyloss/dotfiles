@@ -1,8 +1,16 @@
 #!/bin/sh
-vol=$(pamixer --get-volume)
-[ "$(pamixer --get-mute)" = true ] && echo "🔇 MUTE" && exit 1
-[ "$vol" = 0 ] && echo "🔇 0%" && exit 1
-[ "$vol" -lt 30 ] && echo "🔈 $vol%" && exit 1
-[ "$vol" -lt 70 ] && echo "🔉 $vol%" && exit 1
-[ "$vol" -ge 70 ] && echo "🔊 $vol%" && exit 1
+sink=$(pamixer --list-sinks | grep "\"Running\"" | cut -f 1 -d " ")
 
+if [ "$sink" = "" ]; then
+    vol=$(pamixer --get-volume)
+    mute=$(pamixer --get-mute)
+else
+    vol=$(pamixer --sink "$sink" --get-volume)
+    mute=$(pamixer --sink "$sink" --get-mute)
+fi
+
+[ "$mute" = true ] && echo "🔇 MUTE" && exit 0
+[ "$vol" = 0 ] && echo "🔇 0%" && exit 0
+[ "$vol" -lt 30 ] && echo "🔈 $vol%" && exit 0
+[ "$vol" -lt 70 ] && echo "🔉 $vol%" && exit 0
+[ "$vol" -ge 70 ] && echo "🔊 $vol%" && exit 0
