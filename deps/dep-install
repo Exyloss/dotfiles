@@ -12,7 +12,7 @@ confirm_prompt() {
 }
 
 #sudo pacman --noconfirm -Sy archlinux-keyring
-confirm_prompt "AUR" && yay --noconfirm -S - < dep-aur.txt
+confirm_prompt "AUR" && yay --noconfirm -S - < aur.txt
 
 
 files="base.txt reseau.txt xorg.txt"
