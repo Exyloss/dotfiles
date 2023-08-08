@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Paradox Launcher v2
+Exec=env WINEPREFIX="/home/antonin/.wine" wine C:\\\\users\\\\antonin\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Paradox\\ Interactive\\\\Paradox\\ Launcher\\ v2.lnk
+Type=Application
+StartupNotify=true
+Comment=Paradox Interactive Launcher
+Path=/home/antonin/.wine/dosdevices/c:/Program Files/Paradox Interactive/launcher/
+Icon=4E75_ParadoxIcon.0
+StartupWMClass=bootstrapper-v2.exe

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Prison Architect
+Exec=env WINEPREFIX="/home/antonin/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Prison\\ Architect\\ [GOG.com]\\\\Prison\\ Architect.lnk
+Type=Application
+StartupNotify=true
+Path=/home/antonin/.wine/dosdevices/c:/GOG Games/Prison Architect
+Icon=9E0B_goggame-1441974651.0
+StartupWMClass=dowser.exe

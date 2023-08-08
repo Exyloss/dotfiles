@@ -7,3 +7,4 @@ mpdris2
 epson-inkjet-printer-201112w
 xdg-ninja-git
 mint-themes
+swaylock-effects-git

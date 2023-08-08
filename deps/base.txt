@@ -56,3 +56,4 @@ kdeconnect
 duf
 filelight
 bleachbit
+pcmanfm

@@ -24,6 +24,7 @@ set $gnome-schema org.gnome.desktop.interface
 set $browser librewolf
 set $orange #933000
 
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -50,7 +51,7 @@ output * bg /home/antonin/.config/wallpaper/night.png fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
+
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -240,6 +241,7 @@ client.focused $orange $orange #ffffff $orange $orange
 #input type:keyboard xkb_capslock enabled
 input type:keyboard xkb_numlock enabled
 
+seat * hide_cursor 5000
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Mint-Y-Dark-Teal'
@@ -249,22 +251,27 @@ exec_always {
 
 bindsym $mod+w exec $browser
 bindsym $mod+n exec alacritty --class float -e ncmpcpp
+bindsym $mod+shift+v exec alacritty --class float -e pulsemixer
+bindsym $mod+shift+w exec alacritty --class float -e nmtui
 bindsym $mod+c exec qalculate-gtk
 bindsym $mod+shift+e exec bepower
 bindsym $mod+e exec alacritty --class float -e lf
 bindsym $mod+shift+b exec bl.sh
 
-bindsym XF86AudioLowerVolume exec pamixer -d 5 && kill -44 $(pidof i3blocks)
-bindsym XF86AudioRaiseVolume exec pamixer -i 5 && kill -44 $(pidof i3blocks)
+bindsym XF86AudioLowerVolume exec pamixer -d 2 && kill -44 $(pidof i3blocks)
+bindsym XF86AudioRaiseVolume exec pamixer -i 2 && kill -44 $(pidof i3blocks)
 bindsym XF86AudioMute exec pamixer -t && kill -44 $(pidof i3blocks)
 
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
 
-bindsym $mod+shift+n exec playerctl -a next
-bindsym $mod+shift+p exec playerctl -a previous
-bindsym $mod+shift+plus exec playerctl -a play-pause
+bindsym Print exec beshot.sh
 
+bindsym $mod+shift+n exec bepctl.sh next
+bindsym $mod+shift+p exec bepctl.sh previous
+bindsym $mod+shift+equal exec bepctl.sh play-pause
+
+bindsym $mod+semicolon exec swaymsg focus output HDMI-A-1
 
 for_window [app_id="float"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
@@ -276,6 +283,8 @@ for_window [class="PacketTracer"] floating enable
 exec_always mpd
 exec_always sb-mpdup 2>/dev/null 
 exec_always mpDris2
-exec_always gammastep -l 43.8:-0.5 -t 5000:4000
+exec_always wlsunset -t 3500 -T 5000 -S 08:00 -s 19:00
+exec_always /usr/lib/kdeconnectd
+exec swaymsg "workspace 1; exec $browser"
 
 include /etc/sway/config.d/*

@@ -1,18 +1,33 @@
 [Default Applications]
-
-# xdg-open will use these settings to determine how to open filetypes.
-# These .desktop entries can also be seen and changed in ~/.local/share/applications/
-
-#text/x-shellscript=text.desktop;
-#x-scheme-handler/magnet=torrent.desktop;
-#application/x-bittorrent=torrent.desktop;
-#x-scheme-handler/mailto=mail.desktop;
-#text/plain=text.desktop;
 application/postscript=pdf.desktop;
-application/pdf=pdf.desktop;
 image/png=img.desktop;
 image/jpeg=img.desktop;
 image/gif=img.desktop;
-#application/rss+xml=rss.desktop
-#video/x-matroska=video.desktop
-#inode/directory=file.desktop
+x-scheme-handler/https=librewolf.desktop
+x-scheme-handler/http=librewolf.desktop
+application/x-bittorrent=org.qbittorrent.qBittorrent.desktop
+application/x-cue=mpv.desktop
+application/vnd.rn-realmedia=mpv.desktop
+application/vnd.ms-asf=mpv.desktop
+application/vnd.apple.mpegurl=mpv.desktop
+application/mxf=mpv.desktop
+application/x-matroska=mpv.desktop
+application/x-shorten=mpv.desktop
+application/ogg=mpv.desktop
+application/sdp=mpv.desktop
+application/x-xpinstall=librewolf.desktop
+application/xhtml+xml=librewolf.desktop
+application/xml=librewolf.desktop
+application/json=librewolf.desktop
+application/pdf=org.pwmt.zathura.desktop
+text/x-python=nvim.desktop
+text/x-tex=nvim.desktop
+text/css=nvim.desktop
+text/x-csrc=nvim.desktop
+text/plain=gedit.desktop
+x-scheme-handler/discord-712465656758665259=discord-712465656758665259.desktop
+x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop
+inode/directory=pcmanfm.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
+x-scheme-handler/discord-460807638964371468=discord-460807638964371468.desktop
+
