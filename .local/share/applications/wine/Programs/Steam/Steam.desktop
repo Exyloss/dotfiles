@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Steam
-Exec=env WINEPREFIX="/home/antonin/.local/share/wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Steam\\\\Steam.lnk
-Type=Application
-StartupNotify=true
-Path=/home/antonin/.local/share/wine/dosdevices/c:/Program Files (x86)/Steam
-Icon=5026_steam.0
-StartupWMClass=steam.exe

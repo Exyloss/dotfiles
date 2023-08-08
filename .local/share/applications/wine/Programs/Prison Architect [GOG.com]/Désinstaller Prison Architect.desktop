@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Désinstaller Prison Architect
-Exec=env WINEPREFIX="/home/antonin/.wine" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Prison\\ Architect\\ [GOG.com]\\\\Désinstaller\\ Prison\\ Architect.lnk
-Type=Application
-StartupNotify=true
-Path=/home/antonin/.wine/dosdevices/c:/GOG Games/Prison Architect
-Icon=AC11_unins000.0
-StartupWMClass=unins000.exe
