@@ -1,6 +1,6 @@
 set -U fish_greeting
-set -U fish_cursor_default line
 fish_vi_key_bindings
+#set -U fish_cursor_default block
 
 # Start Sway at login
 if status is-login
@@ -8,6 +8,12 @@ if status is-login
         exec sway
     end
 end
+
+function last_history_item
+    echo $history[1]
+end
+abbr -a !! --position anywhere --function last_history_item
+bind / expand-abbr
 
 starship init fish | source
 mcfly init fish | source

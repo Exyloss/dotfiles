@@ -18,18 +18,28 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $bemenu_opts --sf '#C66000' -l 10 --tf '#C66000' --nb '#000000CC' --ab '#000000CC' --fb '#000000CC' --hb '#000000CC' --hf '#C66000' --cw 1 -H 15
-set $menu bemenu-run $bemenu_opts | xargs swaymsg exec --
+set $menu bemenu-run -l 10 | xargs swaymsg exec --
 set $gnome-schema org.gnome.desktop.interface
 set $browser librewolf
-set $orange #933000
 
+set $orange #933000
+set $lightorange #C66000
+
+set $darkblue #336699
+set $lightblue #84b4d0
+
+set $lightsand #a67c58
+set $darksand #9f643e
+
+# Test
+set $lightricer #84b4d0
+set $darkricer #336699
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/antonin/.config/wallpaper/night.png fill
+#output * bg /home/antonin/.config/wallpaper/mer.png fill
+output * bg /home/antonin/.config/wallpaper/mer.png fill
 #
 # Example configuration:
 #
@@ -185,15 +195,15 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym l resize shrink width 20px
+    bindsym l resize grow width 20px
     bindsym k resize grow height 20px
     bindsym j resize shrink height 20px
-    bindsym h resize grow width 20px
+    bindsym h resize shrink width 20px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 20px
-    bindsym Down resize grow height 20px
-    bindsym Up resize shrink height 20px
+    bindsym Down resize shrink height 20px
+    bindsym Up resize grow height 20px
     bindsym Right resize grow width 20px
 
     # Return to default mode
@@ -220,7 +230,7 @@ bar {
         statusline #ffffff
         background #000000
         inactive_workspace #32323200 #32323200 #5c5c5c
-        focused_workspace  #C66000   $orange   #ffffff
+        focused_workspace  $lightricer   $darkricer   #ffffff
         #==== Default ====#
         #statusline #ffffff
         #background #323232
@@ -236,7 +246,7 @@ gaps inner 10
 
 default_border pixel 2
 
-client.focused $orange $orange #ffffff $orange $orange
+client.focused $darkricer $darkricer #ffffff $darkricer $darkricer
 
 #input type:keyboard xkb_capslock enabled
 input type:keyboard xkb_numlock enabled

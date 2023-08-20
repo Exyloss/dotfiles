@@ -1,0 +1,8 @@
+abbr --position anywhere --add dp '~/Documents/prog'
+abbr --position anywhere --add dpp '~/Documents/prog/python'
+abbr --position anywhere --add dps '~/Documents/prog/shell'
+abbr --position anywhere --add dt '~/Documents/torrent'
+abbr --position anywhere --add dm '~/Documents/media'
+abbr --position anywhere --add vid '~/Videos'
+abbr --position anywhere --add pic '~/Pictures'
+abbr --position anywhere --add .c '~/.config'

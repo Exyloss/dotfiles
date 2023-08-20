@@ -1,0 +1,89 @@
+#EXTM3U
+#RADIOBROWSERUUID:932eb148-e6f6-11e9-a96c-52543be04c81
+#EXTINF:-1,FIP
+http://icecast.radiofrance.fr/fip-hifi.aac
+
+#RADIOBROWSERUUID:ddc49aac-eb85-11e9-a96c-52543be04c81
+#EXTINF:-1,FIP Rock
+http://icecast.radiofrance.fr/fiprock-hifi.aac
+
+#RADIOBROWSERUUID:a9464601-eaa5-11e9-a96c-52543be04c81
+#EXTINF:-1,Tout nouveau, tout FIP
+http://icecast.radiofrance.fr/fipnouveautes-hifi.aac
+
+#RADIOBROWSERUUID:3a6c5454-a001-4800-ae33-813b1227789e
+#EXTINF:-1,FIP Pop
+https://icecast.radiofrance.fr/fippop-hifi.aac
+
+#RADIOBROWSERUUID:264b5883-9a02-4d5d-99bf-060a1666e902
+#EXTINF:-1,FIP Hip Hop
+http://icecast.radiofrance.fr/fiphiphop-hifi.aac
+
+#RADIOBROWSERUUID:7fdb5503-40ba-48e5-ab0b-518adfe0c249
+#EXTINF:-1,BBC Radio 6 Music
+http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_6music.m3u8
+
+#RADIOBROWSERUUID:9617a958-0601-11e8-ae97-52543be04c81
+#EXTINF:-1,Radio Paradise (320k)
+http://stream-uk1.radioparadise.com/aac-320
+
+#RADIOBROWSERUUID:5681d06a-f5af-11e9-bbf2-52543be04c81
+#EXTINF:-1,Radio Paradise - Rock Mix
+http://stream.radioparadise.com/rock-320
+
+#RADIOBROWSERUUID:958c558d-6b13-4829-92ff-49233f56de97
+#EXTINF:-1,OUI FM
+https://ouifm.ice.infomaniak.ch/ouifm-high.mp3
+
+#RADIOBROWSERUUID:689824b5-1dd7-464d-a913-8c363337a883
+#EXTINF:-1,OUI FM CLASSIC ROCK
+https://ouifm3.ice.infomaniak.ch/ouifm3.mp3
+
+#RADIOBROWSERUUID:619ded53-e469-4e2b-ac11-51f86f8eb053
+#EXTINF:-1,OUI FM ROCK INDÉ
+https://ouifm5.ice.infomaniak.ch/ouifm5.mp3
+
+#RADIOBROWSERUUID:d1a54d2e-623e-4970-ab11-35f7b56c5ec3
+#EXTINF:-1,Classic Vinyl HD
+https://icecast.walmradio.com:8443/classic
+
+#RADIOBROWSERUUID:963fb390-0601-11e8-ae97-52543be04c81
+#EXTINF:-1,Radio Nova
+http://novazz.ice.infomaniak.ch/novazz-128.mp3
+
+#RADIOBROWSERUUID:caa4d543-693a-11e9-af37-52543be04c81
+#EXTINF:-1,Radio Nova Vintage
+http://nova-vnt.ice.infomaniak.ch/nova-vnt-128.mp3
+
+#RADIOBROWSERUUID:960553a5-0601-11e8-ae97-52543be04c81
+#EXTINF:-1,Radio Eins
+http://radioeins.de/stream
+
+#RADIOBROWSERUUID:ea8059be-d119-4de3-b27b-0d9bd6aedb17
+#EXTINF:-1,Adroit Jazz Underground
+https://icecast.walmradio.com:8443/jazz
+
+#RADIOBROWSERUUID:9610a807-0601-11e8-ae97-52543be04c81
+#EXTINF:-1,Jazz Radio Funk
+http://jazz-wr06.ice.infomaniak.ch/jazz-wr06-128.mp3
+
+#RADIOBROWSERUUID:afd853b3-e6d1-11e9-a96c-52543be04c81
+#EXTINF:-1,100% Hip Hop | NTS
+https://stream-mixtape-geo.ntslive.net/mixtape2
+
+#RADIOBROWSERUUID:a5331ae6-1196-46c4-b8d6-6a013018bbfe
+#EXTINF:-1,Cinemix
+https://kathy.torontocast.com:1825/stream
+
+#RADIOBROWSERUUID:f32d3a94-d853-4518-906d-8a3d6a1f41df
+#EXTINF:-1,Mouv' Classics
+https://icecast.radiofrance.fr/mouvclassics-hifi.aac
+
+#RADIOBROWSERUUID:960a573e-0601-11e8-ae97-52543be04c81
+#EXTINF:-1,KCRW-HD2 -"Eclectic 24"
+http://kcrw.streamguys1.com/kcrw_192k_mp3_e24_internet_radio
+
+#RADIOBROWSERUUID:6a7508a9-27ab-11e8-91bf-52543be04c81
+#EXTINF:-1,KEXP 90.3 Seattle, WA
+http://live-mp3-128.kexp.org/kexp128.mp3
+
