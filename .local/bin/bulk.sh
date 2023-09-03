@@ -28,7 +28,8 @@ printf "Etes-vous sûr de vouloir modifier vos fichiers ? [O/n] "
 read -r ans
 
 if [ "$ans" = "O" ] || [ "$ans" = "o" ]; then
-    sed 's/^/"/g' ~/.cache/bulk.merge | sed 's/$/"/g' | sed 's/:/" "/g' | xargs -l sh -c 'mv $0 $1 2>/dev/null'
+    sed 's/^/"/g' ~/.cache/bulk.merge | sed 's/$/"/g' | sed 's/:/" "/g' | xargs -l sh -c 'mv "$0" "$1"'
+    echo "changements effectués."
     exit 0
 else
     exit 1

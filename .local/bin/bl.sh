@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export BEMENU_OPTS="--sf '#C66000' --tf '#C66000' --nb '#000000CC' --ab '#000000CC' --fb '#000000CC' --hb '#000000CC' --hf '#C66000' --cw 1 -H 15"
 menu="bemenu"
 
 sel_fun() {

@@ -30,6 +30,7 @@ set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 set -gx FZF_DEFAULT_OPTS "--layout=reverse --height 40%"
 set -gx FZF_DEFAULT_COMMAND 'rg --hidden -l ""'
 set -gx QT_QPA_PLATFORMTHEME "gtk2"	# Have QT use gtk2 theme.
+set -gx QT_QPA_PLATFORM "wayland"
 set -gx MOZ_USE_XINPUT2 "1"		# Mozilla smooth scrolling/touchpads.
 set -gx AWT_TOOLKIT "MToolkit wmname LG3D"	#May have to install wmname
 set -gx _JAVA_AWT_WM_NONREPARENTING 1	# Fix for Java applications in dwm

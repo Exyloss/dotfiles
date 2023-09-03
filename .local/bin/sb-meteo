@@ -1,0 +1,6 @@
+#!/bin/sh
+
+data=$(curl -Ss "wttr.in/?T&format=3")
+emoji=$(echo "$data" | awk '{print $(NF-1)}')
+temp=$(echo "$data" | awk '{print $NF}')
+echo "$emoji $temp"

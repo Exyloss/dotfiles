@@ -2,8 +2,22 @@
 
 pgrep -x bemenu && exit
 
-chosen=$(printf "Verrouiller\nRedémarrer\nÉteindre" | bemenu --sf '#C66000' -l 10 --tf '#C66000' --nb '#000000CC' --ab '#000000CC' --fb '#000000CC' --hb '#000000CC' --hf '#C66000' --cw 1 -H 15)
+chosen=$(printf "Verrouiller\nRedémarrer\nÉteindre" | bemenu -l 10)
 [ "$chosen" = "" ] && exit 1
 [ "$chosen" = Éteindre ] && poweroff
 [ "$chosen" = Redémarrer ] && reboot
-[ "$chosen" = Verrouiller ] && swaylock -l -c '#000000'
+[ "$chosen" = Verrouiller ] && swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color bb00cc \
+	--key-hl-color 880033 \
+	--line-color 00000000 \
+	--inside-color 00000088 \
+	--separator-color 00000000 \
+	--grace 2 \
+	--fade-in 0.2

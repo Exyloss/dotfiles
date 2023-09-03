@@ -32,14 +32,14 @@ set $lightsand #a67c58
 set $darksand #9f643e
 
 # Test
-set $lightricer #84b4d0
-set $darkricer #336699
+set $lightricer #a67c58
+set $darkricer #9f643e
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-#output * bg /home/antonin/.config/wallpaper/mer.png fill
-output * bg /home/antonin/.config/wallpaper/mer.png fill
+#output * bg /home/antonin/.config/wallpaper/nature1.png fill
+output * bg /home/antonin/.config/wallpaper/nature1.png fill
 #
 # Example configuration:
 #
@@ -254,9 +254,10 @@ input type:keyboard xkb_numlock enabled
 seat * hide_cursor 5000
 
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Mint-Y-Dark-Teal'
-    gsettings set $gnome-schema icon-theme 'Mint-Y-Dark-Teal'
+    gsettings set $gnome-schema gtk-theme 'Mint-Y-Dark-Sand'
+    gsettings set $gnome-schema icon-theme 'Mint-Y-Dark-Sand'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema color-scheme 'prefer-dark'
 }
 
 bindsym $mod+w exec $browser
@@ -267,6 +268,7 @@ bindsym $mod+c exec qalculate-gtk
 bindsym $mod+shift+e exec bepower
 bindsym $mod+e exec alacritty --class float -e lf
 bindsym $mod+shift+b exec bl.sh
+bindsym $mod+d exec wdisplays
 
 bindsym XF86AudioLowerVolume exec pamixer -d 2 && kill -44 $(pidof i3blocks)
 bindsym XF86AudioRaiseVolume exec pamixer -i 2 && kill -44 $(pidof i3blocks)
@@ -277,8 +279,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
 
 bindsym Print exec beshot.sh
 
-bindsym $mod+shift+n exec bepctl.sh next
-bindsym $mod+shift+p exec bepctl.sh previous
+bindsym $mod+shift+n exec mpc next
+bindsym $mod+shift+p exec mpc prev
 bindsym $mod+shift+equal exec bepctl.sh play-pause
 
 bindsym $mod+semicolon exec swaymsg focus output HDMI-A-1
@@ -286,15 +288,15 @@ bindsym $mod+semicolon exec swaymsg focus output HDMI-A-1
 for_window [app_id="float"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [class="PacketTracer"] floating enable
+for_window [app_id="pavucontrol"] floating enable, size set 800 600
 #for_window [app_id="org.pwmt.zathura"] floating enable, size set 600 700
 
 #xwayland disable
 
-exec_always mpd
 exec_always sb-mpdup 2>/dev/null 
 exec_always mpDris2
 exec_always wlsunset -t 3500 -T 5000 -S 08:00 -s 19:00
-exec_always /usr/lib/kdeconnectd
+exec_always kdeconnectd
 exec swaymsg "workspace 1; exec $browser"
 
 include /etc/sway/config.d/*

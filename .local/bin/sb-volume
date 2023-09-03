@@ -9,8 +9,10 @@ else
     mute=$(pamixer --sink "$sink" --get-mute)
 fi
 
-[ "$mute" = true ] && echo "🔇 MUTE" && exit 0
-[ "$vol" = 0 ] && echo "🔇 0%" && exit 0
-[ "$vol" -lt 30 ] && echo "🔈 $vol%" && exit 0
-[ "$vol" -lt 70 ] && echo "🔉 $vol%" && exit 0
-[ "$vol" -ge 70 ] && echo "🔊 $vol%" && exit 0
+[ "$mute" = true ] && echo "🔇 MUTE"
+[ "$vol" = 0 ] && echo "🔇 0%"
+[ "$vol" -lt 30 ] && echo "🔈 $vol%"
+[ "$vol" -lt 70 ] && echo "🔉 $vol%"
+[ "$vol" -ge 70 ] && echo "🔊 $vol%"
+
+[ -z "${BLOCK_BUTTON}" ] || wtype -M win -M shift -P v
