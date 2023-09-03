@@ -18,13 +18,17 @@ signal=10
 command=sb-mem
 interval=5
 
+[meteo]
+command=sb-meteo
+interval=120
+
 [battery]
 command=sb-bat
 interval=10
 
 [day]
 command=date '+%a %d %b'
-interval=120
+interval=60
 
 [hour]
 command=date '+%H:%M'
