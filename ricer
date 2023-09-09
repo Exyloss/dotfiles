@@ -1,9 +1,9 @@
 #!/bin/sh
 # Ce script permet d'installer tous les scripts et fichiers de config
+echo "Pensez d'abord à installer les dépendances avant de copier les fichiers de config."
 printf "Êtes-vous sûr de vouloir installer cette config ?\nVos fichiers seront re-écrits. [o/N]"
 read -r choise
 if [ "$choise" = "o" ]; then
-    ./deps/dep-install || exit 1
     cp -r .config ~/
     cp -r .local/ ~/
     sudo cp -r etc /etc
@@ -18,14 +18,12 @@ if [ "$choise" = "o" ]; then
     cd ../surf || exit
     sudo make clean install
     cd ~ || exit
-    chsh -s /bin/zsh "$(whoami)"
-    sudo ln -sfT dash /usr/bin/sh
+    chsh -s /bin/fish "$(whoami)"
+    sudo ln -sfT dash /bin/sh
     git clone https://github.com/lukesmithxyz/st
     cd st || exit
     sudo make clean install
-    sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
-    sudo systemctl enable cups.service
-    systemctl --user enable --now gnome-keyring
+    systemctl --user enable --now gnome-keyring-daemon
 else
     echo "Opération annulée."
 fi

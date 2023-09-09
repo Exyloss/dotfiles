@@ -57,3 +57,5 @@ duf
 filelight
 bleachbit
 pcmanfm
+fish
+bat
