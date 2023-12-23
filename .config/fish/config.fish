@@ -24,7 +24,6 @@ end
 abbr -a !! --position anywhere --function last_history_item
 abbr -a !f --position anywhere --function last_file_item
 
-mcfly init fish | source
 zoxide init fish | source
 
 abbr --erase za

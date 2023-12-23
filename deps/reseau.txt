@@ -7,3 +7,4 @@ curl
 aria2
 httpie
 openvpn
+ipcalc

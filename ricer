@@ -15,15 +15,12 @@ if [ "$choise" = "o" ]; then
     sudo make clean install
     cd ../dwmblocks || exit
     sudo make clean install
-    cd ../surf || exit
-    sudo make clean install
     cd ~ || exit
     chsh -s /bin/fish "$(whoami)"
     sudo ln -sfT dash /bin/sh
-    git clone https://github.com/lukesmithxyz/st
-    cd st || exit
-    sudo make clean install
     systemctl --user enable --now gnome-keyring-daemon
+    systemctl --user enable --now mpd
+    sudo systemctl enable --now bluetooth
 else
     echo "Opération annulée."
 fi

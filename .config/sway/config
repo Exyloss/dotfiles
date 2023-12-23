@@ -269,6 +269,7 @@ bindsym $mod+shift+e exec bepower
 bindsym $mod+e exec alacritty --class float -e lf
 bindsym $mod+shift+b exec bl.sh
 bindsym $mod+d exec wdisplays
+bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy
 
 bindsym XF86AudioLowerVolume exec pamixer -d 2 && kill -44 $(pidof i3blocks)
 bindsym XF86AudioRaiseVolume exec pamixer -i 2 && kill -44 $(pidof i3blocks)
@@ -279,8 +280,8 @@ bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
 
 bindsym Print exec beshot.sh
 
-bindsym $mod+shift+n exec mpc next
-bindsym $mod+shift+p exec mpc prev
+bindsym $mod+shift+n exec bepctl.sh next
+bindsym $mod+shift+p exec bepctl.sh previous
 bindsym $mod+shift+equal exec bepctl.sh play-pause
 
 bindsym $mod+semicolon exec swaymsg focus output HDMI-A-1

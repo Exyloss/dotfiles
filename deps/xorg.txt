@@ -9,3 +9,4 @@ xwallpaper
 numlockx
 slock
 picom
+gammastep
