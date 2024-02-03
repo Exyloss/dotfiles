@@ -6,6 +6,7 @@ read -r choise
 if [ "$choise" = "o" ]; then
     cp -r .config ~/
     cp -r .local/ ~/
+    cp -r .librewolf ~/
     sudo cp -r etc /etc
     sudo cp -r usr/share /usr/share
     cp .zshenv ~/
