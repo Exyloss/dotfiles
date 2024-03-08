@@ -1,0 +1,20 @@
+# -*- conf -*-
+
+[colors]
+regular0=000000  # black
+regular1=b92025  # red
+regular2=839d7a  # green
+regular3=e8a90c  # yellow
+regular4=65949e  # blue
+regular5=e96108  # magenta
+regular6=886594  # cyan
+regular7=e3e3e1  # white
+bright0=445059   # bright black
+bright1=ca3136   # bright red
+bright2=94ae8b   # bright green
+bright3=f9ba1c   # bright yellow
+bright4=87b6bf   # bright blue
+bright5=fa7219   # bright magenta
+bright6=9976a5   # bright cyan
+bright7=f4f4f2   # bright white
+
