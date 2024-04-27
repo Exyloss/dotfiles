@@ -1,4 +1,0 @@
-#!/bin/sh
-current=$(mpc current)
-[ "$current" = "" ] || echo "$current"
-[ -z "${BLOCK_BUTTON}" ] || wtype -M win -P n
