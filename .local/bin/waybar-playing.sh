@@ -10,12 +10,9 @@ do
         title=$(playerctl -p "$i" metadata xesam:title)
         artist=$(playerctl -p "$i" metadata xesam:artist 2>/dev/null)
         [ ! -z "$artist" ] && artist="$artist - "
-        echo "$artist$title" |  sed 's/\(.\{50\}\).*/\1.../'
-        if [ "$BLOCK_BUTTON" = "1" ]; then
-            case "$i" in
-                "mpd") alacritty --class float -e ncmpcpp ;;
-            esac
-        fi
+        player=${i%%.*}
+        echo "[$player] $artist$title" |  sed 's/\(.\{50\}\).*/\1.../' | sed 's/&/&amp;/g'
+        [ "$1" != "" ] && playerctl -p "$i" "$1"
         exit 0
     fi
 done

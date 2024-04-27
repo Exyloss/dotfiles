@@ -216,27 +216,28 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-    height 18
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while ~/.config/sway/status.sh; do sleep 1; done
-    separator_symbol " :|: "
-    status_command i3blocks
-
-    colors {
-        statusline #ffffff
-        background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
-        focused_workspace  $lightricer   $darkricer   #ffffff
-        #==== Default ====#
-        #statusline #ffffff
-        #background #323232
-        #inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+bar swaybar_command waybar
+# bar {
+#     position top
+#     height 18
+# 
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     #status_command while ~/.config/sway/status.sh; do sleep 1; done
+#     separator_symbol " :|: "
+#     status_command i3blocks
+# 
+#     colors {
+#         statusline #ffffff
+#         background #000000
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#         focused_workspace  $lightricer   $darkricer   #ffffff
+#         #==== Default ====#
+#         #statusline #ffffff
+#         #background #323232
+#         #inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
 input * {
     xkb_layout "fr,us"
@@ -295,6 +296,7 @@ for_window [title="Open File"] floating enable, size set 800 600
 
 exec_always sb-mpdup 2>/dev/null 
 exec_always mpDris2
+exec_always mpris-proxy
 exec_always wlsunset -t 3500 -T 5000 -S 8:00 -s 19:00
 exec_always kdeconnectd
 exec_always udiskie

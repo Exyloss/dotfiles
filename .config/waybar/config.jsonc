@@ -1,0 +1,78 @@
+{
+	"layer": "top",	
+	"position": "top",
+    "height": 18,
+
+
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
+    "modules-center": [],
+    "modules-right": ["custom/music", "pulseaudio", "custom/memory", "battery", "custom/date", "clock"],
+
+
+	"sway/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": true,
+        "format": "{index}" 
+},
+
+
+	"sway/window": {
+    	"format": "{}",
+    	"max-length": 150
+},
+
+
+    "custom/date": {
+        "interval": 30,
+        "exec": "date +'%a %e %b'",
+        "format": "{}"
+},
+
+    "clock": {
+        "format": "{:%R}",
+        "interval": 30
+},
+    "custom/music": {
+        "interval": 5,
+        "exec": "waybar-playing.sh",
+        "format": "{}",
+        "on-click": "waybar-playing.sh play-pause",
+        "signal": 11
+},
+
+    "custom/memory": {
+        "interval": 5,
+        "exec": "free | awk '/^Mem/ { print $3/$2*100 }' | cut -d '.' -f 1",
+        "on-click": "alacritty --class float -e htop",
+        "format": "🧠 {}%"
+},
+    
+    "battery": {
+        "bat": "BAT1",
+        "states": {
+              "full": 99,
+              "good": 98,
+              "normal": 98,
+              "warning": 20,
+              "critical": 20
+},
+
+        "format": "{icon} {capacity}%",
+        "format-good": "{icon} {capacity}%", 
+        "format-full": "{icon} {capacity}%",
+        "format-icons": ["🪫", "🪫", "🔋", "🔋", "🔋"],
+        "interval": 30
+},
+
+
+    "pulseaudio": {
+        "interval": 60,
+        "format": "{icon} {volume}%",
+        "format-muted":"🔇 Mute",
+        "format-icons": ["🔉", "🔊"],
+        "on-click": "alacritty --class float -e pulsemixer"    
+},
+
+
+}
+
