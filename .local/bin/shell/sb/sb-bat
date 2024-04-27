@@ -1,0 +1,7 @@
+#!/bin/sh
+bat=$(acpi | awk -F ', ' '{print $2}' | cut -d '%' -f 1)
+treshold=$(echo "(5/3)*${bat}-100/3" | bc -l | cut -d '.' -f 1)
+status=$(acpi | awk '{print $3}')
+
+[ "$status" = "Charging," ] && stat_ico="⚡" || stat_ico="🔋"
+echo "${stat_ico} ${treshold}%"

@@ -63,3 +63,5 @@ swayimg
 syncthing
 bluez
 bluez-utils
+bluez-cups
+firefox

@@ -1,11 +1,7 @@
 separator=true
 
-[title]
-command=cur_window.sh
-interval=persist
-
 [music]
-command=sb-music
+command=now-playing.sh
 interval=5
 signal=11
 

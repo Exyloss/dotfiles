@@ -20,7 +20,7 @@ set $term alacritty
 # on the original workspace that the command was run on.
 set $menu bemenu-run -l 10 | xargs swaymsg exec --
 set $gnome-schema org.gnome.desktop.interface
-set $browser librewolf
+set $browser firefox
 
 set $orange #933000
 set $lightorange #C66000
@@ -255,7 +255,7 @@ seat * hide_cursor 5000
 
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Mint-Y-Dark-Sand'
-    gsettings set $gnome-schema icon-theme 'Mint-Y-Dark-Sand'
+    gsettings set $gnome-schema icon-theme 'Mint-Y-Sand'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema color-scheme 'prefer-dark'
 }
@@ -268,8 +268,8 @@ bindsym $mod+c exec qalculate-gtk
 bindsym $mod+shift+e exec bepower
 bindsym $mod+e exec alacritty --class float -e lf
 bindsym $mod+shift+b exec bl.sh
-bindsym $mod+d exec wdisplays
-bindsym $mod+shift+s exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+d exec fuzzel
+bindsym $mod+shift+s exec beshot.sh
 
 bindsym XF86AudioLowerVolume exec pamixer -d 2 && kill -44 $(pidof i3blocks)
 bindsym XF86AudioRaiseVolume exec pamixer -i 2 && kill -44 $(pidof i3blocks)
@@ -277,8 +277,6 @@ bindsym XF86AudioMute exec pamixer -t && kill -44 $(pidof i3blocks)
 
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
-
-bindsym Print exec beshot.sh
 
 bindsym $mod+shift+n exec bepctl.sh next
 bindsym $mod+shift+p exec bepctl.sh previous
@@ -290,14 +288,17 @@ for_window [app_id="float"] floating enable
 for_window [app_id="qalculate-gtk"] floating enable
 for_window [class="PacketTracer"] floating enable
 for_window [app_id="pavucontrol"] floating enable, size set 800 600
+for_window [title="Open File"] floating enable, size set 800 600
 #for_window [app_id="org.pwmt.zathura"] floating enable, size set 600 700
 
 #xwayland disable
 
 exec_always sb-mpdup 2>/dev/null 
 exec_always mpDris2
-exec_always wlsunset -t 3500 -T 5000 -S 08:00 -s 19:00
+exec_always wlsunset -t 3500 -T 5000 -S 8:00 -s 19:00
 exec_always kdeconnectd
+exec_always udiskie
+exec_always mako --config ~/.config/mako/makorc
 exec swaymsg "workspace 1; exec $browser"
 
 include /etc/sway/config.d/*

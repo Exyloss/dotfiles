@@ -2,6 +2,10 @@
 
 players=$(playerctl -l | grep -v "kdeconnect" | sed 's/\n/ /g')
 
+case "$BLOCK_BUTTON" in
+    1|2|3)
+        alacritty ;;
+esac
 
 for i in $players
 do
@@ -11,11 +15,6 @@ do
         artist=$(playerctl -p "$i" metadata xesam:artist 2>/dev/null)
         [ ! -z "$artist" ] && artist="$artist - "
         echo "$artist$title"
-        if [ "$BLOCK_BUTTON" = "1" ]; then
-            case "$i" in
-                "mpd") alacritty --class float -e ncmpcpp ;;
-            esac
-        fi
         exit 0
     fi
 done

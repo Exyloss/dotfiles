@@ -1,6 +1,5 @@
 simple-mtpfs
 lf-git
-librewolf-bin
 epson-inkjet-printer-escpr2
 ttf-mononoki
 mpdris2

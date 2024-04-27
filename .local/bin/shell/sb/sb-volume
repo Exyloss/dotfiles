@@ -15,4 +15,4 @@ fi
 [ "$vol" -lt 70 ] && echo "🔉 $vol%"
 [ "$vol" -ge 70 ] && echo "🔊 $vol%"
 
-[ "$BLOCK_BUTTON" = "1" ] && alacritty --class float -e pulsemixer
+[ -z "${BLOCK_BUTTON}" ] || wtype -M win -M shift -P v
