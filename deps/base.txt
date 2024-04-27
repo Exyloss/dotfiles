@@ -65,3 +65,7 @@ bluez
 bluez-utils
 bluez-cups
 firefox
+breeze
+breeze-gtk
+kate
+konsole
