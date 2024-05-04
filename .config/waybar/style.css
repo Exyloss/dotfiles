@@ -45,6 +45,10 @@ window#waybar {
 	background-color: #9f643e;
 	color: #ffffff;
 }
+#workspaces button.urgent {
+    background-color: #900000;
+    color: #ffffff;
+}
 
 
 #mode { 

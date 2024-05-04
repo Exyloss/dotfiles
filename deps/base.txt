@@ -67,6 +67,7 @@ bluez-cups
 firefox
 breeze
 breeze-gtk
-kate
 konsole
 waybar
+audacity
+mako

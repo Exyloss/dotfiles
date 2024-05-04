@@ -1,0 +1,4 @@
+#!/bin/sh
+
+brightnessctl "$1" "$2"
+brightnessctl i | grep '%' | cut -d '%' -f 1 | cut -d '(' -f 2 >> /tmp/wobpipe

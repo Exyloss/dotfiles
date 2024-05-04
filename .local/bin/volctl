@@ -1,0 +1,7 @@
+#!/bin/sh
+
+pamixer "$1" "$2"
+
+pid=$(pidof "$STATUSBAR")
+[ "$pid" ] && kill -44 $(pidof "$STATUSBAR")
+exit 0

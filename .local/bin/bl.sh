@@ -23,6 +23,7 @@ sel_fun() {
 
 connect() {
     sel_device "Paired" || return 1
+    bluetooth on
     con_dev "$device"
 }
 
@@ -33,6 +34,7 @@ disconnect() {
 
 pairing() {
     sel_device "" || return 1
+    bluetooth on
     pair_dev "$device"
 }
 
@@ -54,7 +56,7 @@ paired_devices() {
 }
 
 con_dev() {
-    timeout -k 5 5 bluetoothctl connect "$1" && notify-send "bl.sh : Succès" "Appareil connecté avec succès." && return 0
+    timeout -k 10 10 bluetoothctl connect "$1" && notify-send "bl.sh : Succès" "Appareil connecté avec succès." && return 0
     notify-send "bl.sh : Erreur" "Erreur lors de la connexion de l'appareil"
 }
 

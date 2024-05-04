@@ -272,12 +272,12 @@ bindsym $mod+shift+b exec bl.sh
 bindsym $mod+d exec fuzzel
 bindsym $mod+shift+s exec beshot.sh
 
-bindsym XF86AudioLowerVolume exec pamixer -d 2 && kill -44 $(pidof i3blocks)
-bindsym XF86AudioRaiseVolume exec pamixer -i 2 && kill -44 $(pidof i3blocks)
-bindsym XF86AudioMute exec pamixer -t && kill -44 $(pidof i3blocks)
+bindsym XF86AudioLowerVolume exec volctl -d 2
+bindsym XF86AudioRaiseVolume exec volctl -i 2
+bindsym XF86AudioMute exec volctl -t
 
-bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
-bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
+bindsym XF86MonBrightnessDown exec brightctl s 5%-
+bindsym XF86MonBrightnessUp exec brightctl s 5%+
 
 bindsym $mod+shift+n exec bepctl.sh next
 bindsym $mod+shift+p exec bepctl.sh previous
@@ -301,6 +301,7 @@ exec_always wlsunset -t 3500 -T 5000 -S 8:00 -s 19:00
 exec_always kdeconnectd
 exec_always udiskie
 exec_always mako --config ~/.config/mako/makorc
+exec_always printf "" > /tmp/wobpipe && tail -f /tmp/wobpipe | wob
 exec swaymsg "workspace 1; exec $browser"
 
 include /etc/sway/config.d/*

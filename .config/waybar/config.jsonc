@@ -6,7 +6,7 @@
 
     "modules-left": ["sway/workspaces", "sway/mode", "sway/window"],
     "modules-center": [],
-    "modules-right": ["custom/music", "pulseaudio", "custom/memory", "battery", "custom/date", "clock"],
+    "modules-right": ["custom/music", "pulseaudio", "custom/memory", "custom/battery", "custom/date", "clock"],
 
 
 	"sway/workspaces": {
@@ -45,6 +45,11 @@
         "exec": "free | awk '/^Mem/ { print $3/$2*100 }' | cut -d '.' -f 1",
         "on-click": "alacritty --class float -e htop",
         "format": "🧠 {}%"
+},
+    "custom/battery": {
+        "interval": 5,
+        "exec": "sb-bat",
+        "format": "{}"
 },
     
     "battery": {
